@@ -1,5 +1,10 @@
 # ZEROLAX development status
 
+## Vercel web deployment configuration — 2026-11-11
+
+- Added root `vercel.json` for the npm-workspaces monorepo: Vercel installs from the root lockfile, builds `@zerolax/web`, serves `apps/web/dist`, and rewrites client-side routes to the SPA entry point.
+- Verified `npm run build --workspace=@zerolax/web` succeeds. Vercel hosts the static web client only; the Fastify API and production database remain separate services. Configure `VITE_API_URL` to the public HTTPS API origin and allow the deployed Vercel origin in API `CORS_ORIGINS` before using authenticated/API-backed features. No Vercel project credentials or linked project are present in this workspace, so deployment itself is not yet verified.
+
 ## Mini-games navigation under Exams — 2026-11-11
 
 - Added the real /exams category hub: Algebra exams, Geometry exams, DTM exams, SAT exams and Mini-games. Existing IQ and all-entrance categories remain available. Algebra/Geometry link to the existing grade/book/exam flow. DTM/SAT filter the existing published entrance-test catalog using its subject/slug/title metadata (SAT-marked tests versus the legacy non-SAT entrance/DTM pool); the unfiltered entrance catalog is retained. No exam content, scoring engine or placeholder module was created.

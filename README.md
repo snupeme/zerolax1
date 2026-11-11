@@ -132,6 +132,10 @@ Copy `.env.example` to `.env`. The most important values:
 
 Never commit `.env`. Only `VITE_*` values are exposed to the browser.
 
+## Deploy the web app on Vercel
+
+The repository root contains `vercel.json` for this npm-workspaces monorepo. Import the repository as a Vite project without changing its root directory; Vercel runs `npm ci`, builds `@zerolax/web`, serves `apps/web/dist`, and falls back to `index.html` for client-side routes. Set the Vercel build environment variable `VITE_API_URL` to the public HTTPS origin of the separately deployed ZEROLAX API (no trailing slash). The API must allow the Vercel site origin in `CORS_ORIGINS`; Vercel serves the web client and does not host the Fastify API or its database.
+
 ## Security model
 
 - Telegram `initData` is verified server-side with HMAC-SHA256, an auth-date freshness check and a constant-time comparison.
