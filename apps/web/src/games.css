@@ -1,0 +1,18 @@
+.simple-game { --answer-size: 64px; }
+.simple-answer { min-height: var(--answer-size); border: 2px solid hsl(var(--input)); border-radius: 1rem; background: hsl(var(--card)); color: hsl(var(--foreground)); font-size: 1.75rem; font-weight: 800; transition: transform .12s, background-color .15s; }
+.simple-answer:active { transform: scale(.97); }
+.simple-answer:focus-visible { outline: 3px solid hsl(var(--ring)); outline-offset: 3px; }
+.simple-answer:disabled { cursor: default; }
+.simple-answer[data-state="correct"] { background: hsl(var(--success)); color: hsl(var(--success-foreground)); border-color: hsl(var(--success)); }
+.simple-answer[data-state="wrong"] { border-color: hsl(var(--destructive)); background: hsl(var(--destructive) / .1); }
+.simple-object-gone { animation: simple-leave .4s .6s both; }
+.simple-count { animation: simple-appear .2s both; }
+.simple-distribution { animation: simple-appear .3s both; }
+.simple-success { animation: simple-success .3s ease-out; }
+@keyframes simple-leave { to { opacity: .12; transform: translateY(-6px); } }
+@keyframes simple-appear { from { opacity: .3; transform: translateY(3px); } to { opacity: 1; transform: none; } }
+@keyframes simple-success { 50% { transform: scale(1.02); } }
+@media (prefers-reduced-motion: reduce) {
+ .simple-game *, .simple-game *::before, .simple-game *::after { animation: none !important; transition: none !important; }
+ .simple-object-gone { opacity: .12; }
+}

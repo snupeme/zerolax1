@@ -1,0 +1,201 @@
+# ZEROLAX — AUTUMN SEASONAL DESIGN SYSTEM
+## Premium Autumn Theme Implementation
+
+Act as a senior UI/UX designer and frontend engineer.
+
+Implement a complete seasonal visual theme system for the existing ZEROLAX Telegram Mini App.
+
+IMPORTANT:
+This is NOT a complete application redesign. Preserve the current layout, components, navigation, content, and functionality. Upgrade the visual design consistently across the entire application.
+
+## 1. FOUR-SEASON DESIGN ARCHITECTURE
+
+Prepare the design system for four seasonal themes:
+
+- Autumn
+- Winter
+- Spring
+- Summer
+
+For now, IMPLEMENT ONLY AUTUMN.
+
+However, architect the theme system so the other three seasons can be added later without rewriting individual pages.
+
+Use centralized design tokens / CSS variables.
+
+All pages and components must use the shared theme tokens instead of hardcoded colors.
+
+## 2. AUTUMN COLOR PALETTE
+
+Create a sophisticated premium autumn palette:
+
+Primary background: #F3EBDD
+Secondary background: #EAE1D3
+Card background: #FFFDF8
+Primary dark green: #263D35
+Secondary forest green: #385447
+Autumn copper: #A65E32
+Warm gold: #D6A64B
+Muted burgundy: #A34E3D
+Midnight navy: #343747
+Primary text: #292D2A
+Secondary text: #77746D
+Border: #E3D8C8
+
+Use colors according to component purpose.
+
+Do not apply every color to every element.
+
+Maintain excellent contrast and readability.
+
+## 3. GLOBAL THEME APPLICATION
+
+Apply the Autumn theme consistently to:
+
+- Homepage.
+- Header.
+- Navigation bar.
+- Subject pages.
+- Algebra.
+- Geometry.
+- DTM preparation.
+- SAT preparation.
+- IQ tests.
+- Math Arcade.
+- Mini-games.
+- Exam pages.
+- Results.
+- Certificates.
+- Profile.
+- Premium pages.
+- Admin interface where appropriate.
+
+Different pages may have different background shades, but they must all belong to the same autumn color family.
+
+Examples:
+- Main background: warm cream.
+- Educational cards: ivory.
+- Premium cards: deep forest green.
+- Exam cards: muted navy.
+- Important actions: autumn copper or gold.
+- Progress indicators: forest green and warm gold.
+
+## 4. AUTUMN DECORATIVE EFFECTS
+
+Add subtle seasonal visual details.
+
+Use:
+- Small falling autumn leaves.
+- Very subtle leaf illustrations in selected corners.
+- Tiny floating leaf elements in the homepage hero section.
+- Soft warm light effects.
+- Gentle background transitions.
+- Minimal autumn decorative patterns.
+
+IMPORTANT:
+- Leaves must be small and elegant.
+- Use realistic or refined vector-style leaf shapes.
+- Avoid cartoon-style decorations.
+- Do not cover text, buttons, or important content.
+- Do not place falling leaves on every screen.
+- Use seasonal effects mainly on the homepage and selected hero banners.
+- Keep the interface professional, not childish.
+
+## 5. MICRO-INTERACTIONS
+
+Add subtle premium interactions:
+
+- Gentle leaf movement.
+- Slow falling leaf animation.
+- Smooth card hover and press effects.
+- Soft button transitions.
+- Elegant page transitions.
+- Subtle seasonal banner animations.
+
+Animations must be lightweight and optimized for lower-end Android devices.
+
+Respect reduced-motion preferences.
+
+Avoid excessive particles, constant movement, and distracting effects.
+
+## 6. AUTUMN HOMEPAGE
+
+Give the homepage a premium autumn identity.
+
+The hero section should use:
+- Deep forest green.
+- Warm golden accents.
+- Soft autumn background details.
+- Small decorative leaves.
+
+Keep ZEROLAX branding clear.
+
+Do not redesign the existing homepage layout.
+
+## 7. THEME ARCHITECTURE
+
+Create a centralized seasonal theme configuration.
+
+For example:
+- autumn
+- winter
+- spring
+- summer
+
+Each theme must define:
+- Primary background.
+- Secondary background.
+- Card background.
+- Primary text.
+- Secondary text.
+- Primary brand color.
+- Accent color.
+- Border color.
+- Shadow style.
+- Decorative asset configuration.
+
+For now, activate autumn as the default theme.
+
+Do not implement unfinished winter, spring, or summer visuals yet.
+
+Make future theme switching possible through one centralized configuration.
+
+## 8. PERFORMANCE AND ACCESSIBILITY
+
+- Optimize decorative assets.
+- Avoid large background images where CSS can achieve the same result.
+- Prevent layout shifts.
+- Keep text readable.
+- Ensure buttons remain accessible.
+- Avoid excessive animations.
+- Test on small Android screens.
+- Ensure Telegram Mini App compatibility.
+
+## 9. IMPLEMENTATION RULES
+
+First inspect the existing codebase.
+
+Identify all hardcoded colors and existing theme logic.
+
+Refactor them into centralized design tokens.
+
+Preserve all existing features and routes.
+
+Do not create duplicate components.
+
+Do not use placeholder screens.
+
+Implement the actual theme across the existing application.
+
+Finally:
+- Test every major page.
+- Check color consistency.
+- Check mobile responsiveness.
+- Check animation performance.
+- Update DEVELOPMENT_STATUS.md.
+
+FINAL GOAL:
+
+ZEROLAX must feel like a premium educational platform during autumn, with warm cream backgrounds, forest green surfaces, copper and gold accents, and elegant subtle falling-leaf effects.
+
+The entire application must feel visually connected, even though individual pages use different background colors.

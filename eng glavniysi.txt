@@ -1,0 +1,216 @@
+# ZEROLAX — FINAL CLIENT REQUIREMENTS INTEGRATION
+
+You are working on the existing ZEROLAX educational Telegram Mini App project.
+
+Your task is to update and integrate the final client decisions below into the existing architecture, backend, frontend, database, admin panel, and testing system.
+
+## 1. IMPORTANT DEVELOPMENT RULES
+
+- First inspect the entire existing project structure, database schema, API, Telegram bot, authentication, and current features.
+- Do not create a second project or duplicate existing functionality.
+- Preserve all working features, especially Daily IQ, Abituriyent, Algebra, Geometry, coins, user profiles, and Telegram integration.
+- Implement the changes in the actual codebase. Do not only provide a plan.
+- Use database migrations for schema changes.
+- Update `DEVELOPMENT_STATUS.md` with completed work, pending work, and known issues.
+- Do not use fake payment processing or fake exam results.
+- All important business rules must be validated on the backend.
+
+## 2. FINAL EXAM AND CERTIFICATE RULES
+
+Implement the following score policy:
+
+| Score | Result |
+|---|---|
+| Below 40 | Book must be studied again |
+| 40–49 | Admin-configurable result policy |
+| 50–70 | Recommend reviewing the material; next book remains locked |
+| 71–79 | Next book unlocks; no certificate |
+| 80–100 | Next book unlocks and certificate is issued |
+
+Important:
+- Certificate threshold is exactly 80 points.
+- A score of 80 or higher qualifies for a certificate.
+- A score of 71–79 unlocks the next book but does not qualify for a certificate.
+- A score of 50–70 does not unlock the next book.
+- Below 40 requires repeating the book.
+- The 40–49 range must be configurable by the admin. Do not invent a fixed policy for it.
+
+Make all thresholds configurable in the admin panel, with the above values as defaults. The admin must be able to change them later.
+
+## 3. RETAKE POLICY
+
+The client has confirmed: **one retake per exam**.
+
+Implement this rule consistently for:
+- Topic tests
+- Intermediate exams
+- Final book exams
+
+Requirements:
+- Each user receives one initial attempt and a maximum of one additional retake for each exam.
+- Maximum attempts per exam: 2.
+- Display the number of remaining attempts before the user starts.
+- Store each attempt separately, including score, answers, start time, finish time, and status.
+- Do not allow the frontend to reset or bypass attempt limits.
+- Enforce the limit on the backend and database.
+- Prevent duplicate submissions and race conditions.
+- Admins may have a separately permission-controlled ability to grant an additional attempt. Every override must be recorded in the audit log.
+- If an exam is passed, do not offer an unnecessary retake unless the admin explicitly enables it.
+
+## 4. TOPIC TEST
+
+The client has confirmed: **10 questions per topic test**.
+
+Requirements:
+- Each topic test contains exactly 10 questions.
+- Questions must be selected randomly from the question bank belonging to that topic.
+- Avoid duplicate questions within the same attempt.
+- Store the selected question IDs when the attempt starts.
+- If fewer than 10 suitable questions exist, do not start an incomplete test. Show a clear message to the user and notify the admin.
+- Calculate scores on the backend.
+- Save answers and results securely.
+- Apply the one-retake policy.
+
+The admin must be able to add, edit, and organize topic questions.
+
+## 5. INTERMEDIATE AND FINAL EXAMS
+
+Keep the existing exam structure:
+
+### Intermediate exam
+- After every 10 topics, create an intermediate exam.
+- Exactly 20 questions.
+- Questions are randomly selected from the 10 topics covered in that block.
+- Apply the one-retake policy.
+
+### Final book exam
+- Exactly 20 questions.
+- Questions are randomly selected from the entire completed book.
+- Apply the one-retake policy.
+- Apply the final score rules from Section 2.
+- Unlock the next book only when the configured passing threshold is reached. Default: above 70.
+
+## 6. PREMIUM — TWO ACCESS METHODS
+
+The client has confirmed that Premium must support BOTH methods:
+
+### Method A: Admin-granted Premium
+- Admin can manually grant Premium to a user.
+- Admin can set the start date, expiration date, and duration.
+- Admin can revoke or extend Premium.
+- Record the admin responsible for each change.
+- Log all changes in the audit log.
+
+### Method B: Paid Premium subscription
+- Build a real payment integration architecture.
+- Use a payment-provider abstraction so a supported provider can be connected without rewriting the subscription system.
+- Do not invent payment credentials or pretend that a payment succeeded.
+- Verify payment status on the backend using the provider's official verification mechanism or webhook.
+- Never activate Premium based only on a frontend success message.
+- Prevent duplicate payment processing and duplicate subscription activation.
+- Store payment transaction ID, provider, amount, currency, status, and timestamps.
+- Handle successful, pending, failed, refunded, and expired transactions.
+- Activate Premium only after verified payment.
+- Keep payment secrets on the backend.
+
+### Premium access rules
+- Free users can access topics 1, 2, and 3 in each book by default.
+- Topics 4 onward require active Premium.
+- Admin can configure the free-topic limit for each book.
+- Admin-granted and paid Premium subscriptions must use the same access-control system.
+- When Premium expires, paid content becomes locked again, but the user's completed topics and exam history must remain saved.
+- Do not delete user progress when a subscription expires.
+
+Do not choose a payment provider, subscription price, or subscription duration without an existing project configuration or explicit client decision. If these details are missing, implement the provider-ready architecture and leave configuration clearly marked as pending.
+
+## 7. CERTIFICATE GENERATION
+
+Generate a certificate when a user achieves 80 points or higher in the final book exam.
+
+Certificate must include:
+- Student's full name
+- Grade/class
+- Book name
+- Exam score
+- Completion date and time
+- Time spent on the exam
+- Unique certificate ID
+- QR code for verification
+
+Requirements:
+- Generate a PDF certificate.
+- Store the PDF securely.
+- Create a public certificate verification page.
+- The QR code must open the verification page.
+- The verification page must show only public-safe certificate information.
+- Do not expose phone numbers, addresses, private user data, or internal database identifiers.
+- Prevent duplicate certificate generation for the same qualifying exam completion.
+- Allow admins to inspect and revoke certificates with an audit record.
+
+## 8. ADMIN PANEL
+
+Ensure the admin panel supports:
+- Editing exam score thresholds.
+- Editing topic test question count, with default 10.
+- Managing the one-retake policy.
+- Granting and revoking additional attempts with audit logs.
+- Managing Premium users and manual subscriptions.
+- Managing paid subscription configuration and payment transactions.
+- Managing certificate generation, verification, and revocation.
+- Viewing each user's attempts, scores, progress, and certificates.
+
+All sensitive operations must require appropriate admin permissions.
+
+## 9. DATABASE AND BACKEND
+
+Inspect the existing schema and implement only the necessary migrations.
+
+Ensure the data model supports:
+- Exam definitions and types.
+- Exam attempts and attempt numbers.
+- Selected question IDs per attempt.
+- User answers and calculated scores.
+- Retake limits.
+- Score thresholds and admin settings.
+- Book unlock status.
+- Certificates and verification IDs.
+- Premium subscription records.
+- Admin-granted Premium access.
+- Payment transactions and webhook events.
+- Admin audit logs.
+
+Use database constraints and backend transactions where needed to prevent duplicate attempts, payments, certificates, or unlock operations.
+
+Never trust client-submitted scores, user IDs, Premium status, certificate eligibility, or book-unlock decisions.
+
+## 10. TESTING AND ACCEPTANCE CRITERIA
+
+Write and run tests for the following cases:
+
+1. Topic test contains exactly 10 questions.
+2. Intermediate exam contains exactly 20 questions.
+3. Final book exam contains exactly 20 questions.
+4. User cannot submit more than two attempts for the same exam.
+5. User can use the one permitted retake.
+6. A third attempt is blocked unless an authorized admin grants an exception.
+7. Score below 40 triggers the repeat-book policy.
+8. Score 50–70 does not unlock the next book.
+9. Score 71–79 unlocks the next book but does not generate a certificate.
+10. Score 80 generates a certificate and unlocks the next book.
+11. Score 100 generates only one certificate.
+12. Free users can access the configured free topics.
+13. Premium users can access locked topics.
+14. Admin-granted Premium works correctly.
+15. Paid Premium activates only after verified payment.
+16. Expired Premium does not delete the user's learning progress.
+17. Public certificate verification does not expose private user information.
+
+After implementation:
+- Run database migrations.
+- Run automated tests.
+- Fix discovered errors.
+- Check Telegram Mini App behavior on mobile.
+- Update `DEVELOPMENT_STATUS.md`.
+- Report which features are complete, which require payment-provider credentials, and which still need client decisions.
+
+Do not mark a feature as complete unless it has actually been implemented and tested.

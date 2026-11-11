@@ -1,0 +1,414 @@
+# ZEROLAX — COMPLETE PREMIUM HOMEPAGE UI/UX REDESIGN
+
+You are a world-class Senior UI/UX Designer, Product Designer, and Senior Frontend Engineer specializing in premium EdTech platforms.
+
+Your task is to redesign the existing ZEROLAX Telegram Mini App homepage and its main navigation into a high-quality, modern, premium educational platform.
+
+A reference screenshot has been provided.
+
+IMPORTANT: Use the provided screenshot as a STRUCTURAL and LAYOUT reference, not as a design to copy pixel by pixel.
+
+The client likes:
+- The overall homepage structure.
+- The greeting and coin balance at the top.
+- A large Premium promotional banner.
+- A prominent Mathematics Arcade section.
+- IQ and exam preparation shortcuts.
+- A categorized subject section.
+- AI and certificate feature cards.
+- Bottom navigation.
+
+However, the client specifically does NOT want a childish visual style.
+
+The final result must look like a serious, premium, modern EdTech product used by students in grades 1–11.
+
+Do not make the application look like a kindergarten game, cartoon app, or children's entertainment platform.
+
+# 1. CORE DESIGN CONCEPT
+
+Brand: ZEROLAX
+
+Design direction:
+PREMIUM MODERN EDUCATION TECHNOLOGY.
+
+Visual identity:
+- Professional.
+- Elegant.
+- Minimal.
+- Modern.
+- Trustworthy.
+- Premium.
+- Easy to understand.
+- Visually memorable.
+
+The design must balance an engaging educational experience with a mature professional appearance.
+
+Avoid:
+- Cartoon characters.
+- Baby-style illustrations.
+- Excessively bright colors.
+- Oversized childish icons.
+- Excessive gradients.
+- Unnecessary decorative elements.
+- Cluttered layouts.
+- Cheap-looking game interfaces.
+- Excessively rounded buttons and cards.
+
+Use clean geometry, carefully selected typography, restrained shadows, elegant cards, and consistent spacing.
+
+# 2. COLOR SYSTEM
+
+Create a consistent design system.
+
+Suggested primary palette:
+
+- Deep Emerald: #075B4C
+- Dark Emerald: #064638
+- Midnight Navy: #171A35
+- Deep Navy: #222642
+- Warm Gold: #E5B94F
+- Background: #F6F7F5
+- White: #FFFFFF
+- Primary Text: #20242B
+- Secondary Text: #777F89
+- Borders: #E8EAE7
+
+Use colors consistently.
+
+The green color represents learning and growth.
+
+The navy color represents intelligence and professionalism.
+
+Gold is reserved for Premium, rewards, and important highlights.
+
+Do not use all colors everywhere.
+
+# 3. TYPOGRAPHY
+
+Use a modern, highly readable typography system.
+
+Preferred fonts:
+- Inter
+- Manrope
+- Plus Jakarta Sans
+
+Use:
+- Strong but elegant headings.
+- Clear section titles.
+- Readable descriptions.
+- Consistent font weights.
+- Proper line heights.
+
+All text must be readable on small mobile screens.
+
+Avoid decorative or childish fonts.
+
+# 4. HOMEPAGE STRUCTURE
+
+Redesign the homepage using the following exact content hierarchy.
+
+## SECTION A — TOP HEADER
+
+At the top:
+
+Left:
+- User profile avatar.
+- Personalized greeting.
+- User's display name.
+
+Example:
+"Xayrli tong, Abdulaziz!"
+
+Right:
+- Coin balance.
+- Small coin icon.
+- Current ZL balance.
+
+The header must be compact, elegant, and clean.
+
+Coin balance should be visually noticeable but not overpower the greeting.
+
+Make the avatar and profile area clickable.
+
+# 5. PREMIUM PROMOTIONAL BANNER
+
+Create a large, premium-looking promotional banner.
+
+Main text:
+"Barcha kurslarni oching"
+
+Description:
+"Barcha fanlar, testlar tahlili va qo‘shimcha imkoniyatlardan foydalaning."
+
+CTA:
+"Premiumga o'tish"
+
+Design:
+- Deep emerald background.
+- Elegant gold accent.
+- Subtle abstract educational pattern.
+- Premium typography.
+- Professional layout.
+- No cartoon illustrations.
+
+The banner must navigate to the actual Premium page.
+
+If the user already has Premium, show a suitable active subscription state instead of the purchase message.
+
+# 6. ZEROLAX MATH ARCADE
+
+Create a prominent Mathematics Arcade card.
+
+Title:
+"ZEROLAX Math Arcade"
+
+Subtitle:
+"O‘yin orqali hisoblashni o‘rganing!"
+
+CTA:
+"O‘ynashni boshlash"
+
+Use a midnight navy background with elegant mathematical symbols.
+
+The visual should look like a premium educational gaming product, not a children's cartoon game.
+
+Include subtle animated mathematical symbols:
+- Plus.
+- Minus.
+- Multiplication.
+- Division.
+- Equals.
+
+The symbols should be clean, geometric, and modern.
+
+The card must open the existing Mathematics Mini-Games section containing four games:
+
+1. Qo‘shish.
+2. Ayirish.
+3. Ko‘paytirish.
+4. Bo‘lish.
+
+The games themselves can be engaging and interactive, but their visual identity must remain consistent with the professional ZEROLAX design.
+
+# 7. QUICK ACCESS CARDS
+
+Below the Math Arcade banner, create two prominent quick-access cards.
+
+CARD 1:
+Title: "IQ Mashqlari"
+Description: "Mantiqiy fikrlashni rivojlantiring."
+
+CARD 2:
+Title: "Imtihon tayyorgarligi"
+Description: "Bilimingizni sinab ko‘ring."
+
+Design:
+- Two-column layout on mobile where space permits.
+- Elegant green and muted coral or navy accents.
+- Simple professional icons.
+- Clear titles.
+- Subtle shadows.
+- Smooth interaction.
+
+Each card must navigate to its actual existing module.
+
+# 8. SUBJECTS SECTION
+
+Section title:
+"FANLAR BO‘LIMI"
+
+Display the following subjects:
+
+- Algebra
+- Geometriya
+
+Each subject should have a minimal, professional icon and a clear navigation indicator.
+
+IMPORTANT: SUBJECT NAVIGATION MUST WORK CORRECTLY.
+
+When the user clicks Algebra:
+
+Open a grade selection view containing:
+
+5-SINF
+6-SINF
+7-SINF
+8-SINF
+9-SINF
+10-SINF
+11-SINF
+
+When the user clicks Geometry:
+
+Open the same grade selection structure for Geometry.
+
+After selecting a grade:
+- Display the books assigned to that grade.
+- After selecting a book, display its topics.
+- After selecting a topic, open the actual learning content.
+
+Do not redirect Algebra or Geometry to the certificate page.
+
+Preserve all existing grade, book, topic, Premium, and progress logic.
+
+The homepage should display the subject cards cleanly without showing every grade immediately unless the user expands a subject.
+
+# 9. AI AND CERTIFICATE CARDS
+
+Create two secondary feature cards.
+
+CARD 1:
+Title: "AI Tahlilchi"
+Description: "Xatolaringizni tahlil qiling."
+
+CARD 2:
+Title: "Milliy Sertifikat Testlari"
+Description: "Bilimingizni imtihon formatida sinang."
+
+Use professional icons and restrained backgrounds.
+
+Do not use childish illustrations.
+
+Both cards must connect to their actual existing modules.
+
+# 10. BOTTOM NAVIGATION
+
+Create a fixed bottom navigation bar with five sections:
+
+1. Bosh sahifa
+2. Fanlar
+3. Testlar
+4. Natijalar
+5. Profil
+
+Requirements:
+- Clear minimal icons.
+- Active navigation indicator.
+- Short labels.
+- Proper spacing.
+- Safe-area support for Telegram.
+- Smooth navigation transitions.
+- Correct navigation history.
+
+The bottom navigation must remain usable on small mobile screens.
+
+# 11. INTERACTION AND ANIMATION
+
+Use subtle, premium micro-interactions:
+
+- Smooth card press states.
+- Small hover effects on desktop.
+- Gentle transitions.
+- Loading skeletons.
+- Animated progress indicators.
+- Elegant banner transitions.
+- Subtle mathematical symbol movement in Math Arcade.
+
+Do not use excessive bouncing, flashing, spinning, or childish animations.
+
+Respect reduced-motion preferences.
+
+# 12. RESPONSIVE DESIGN AND TELEGRAM MINI APP
+
+The primary target is Telegram Mini App on mobile.
+
+Requirements:
+- Mobile-first design.
+- Adapt to Telegram viewport.
+- Support safe areas.
+- No horizontal overflow.
+- No content hidden behind bottom navigation.
+- Proper scrolling.
+- Correct back-button behavior.
+- Support smaller Android devices.
+- Maintain readable typography.
+- Optimize images and assets.
+
+Also support desktop and tablet layouts.
+
+# 13. FUNCTIONAL REQUIREMENTS
+
+This is not a static UI redesign.
+
+Every visible button and card must perform its actual action.
+
+Connect the homepage to:
+- Existing user profile.
+- Existing coin balance.
+- Existing Premium subscription.
+- Existing Mathematics Arcade.
+- Existing IQ tests.
+- Existing exam preparation.
+- Existing Algebra.
+- Existing Geometry.
+- Existing AI analysis.
+- Existing certificate tests.
+- Existing results.
+- Existing settings.
+
+Use real database data.
+
+Do not insert fake statistics or placeholder balances into production.
+
+Preserve the current authentication and Telegram integration.
+
+# 14. TECHNICAL IMPLEMENTATION
+
+Before making changes:
+1. Inspect the existing frontend.
+2. Inspect the router.
+3. Inspect the current homepage.
+4. Inspect shared components.
+5. Inspect API endpoints.
+6. Inspect existing navigation.
+7. Identify incorrect routes and broken interactions.
+
+Then:
+- Refactor the homepage into reusable components.
+- Build a consistent design token system.
+- Reuse existing UI libraries where appropriate.
+- Keep components maintainable.
+- Avoid unnecessary dependencies.
+- Preserve existing business logic.
+- Keep API and database behavior intact.
+
+Do not duplicate existing modules.
+
+# 15. QUALITY CONTROL
+
+Before completion, verify:
+
+1. Homepage looks professional and premium.
+2. Design is not childish.
+3. Header displays actual user information.
+4. Coin balance is loaded from the backend.
+5. Premium banner works.
+6. Math Arcade opens correctly.
+7. IQ card works.
+8. Exam preparation card works.
+9. Algebra opens grades 5–11.
+10. Geometry opens grades 5–11.
+11. Grade selection opens correct books.
+12. AI analysis card works.
+13. Certificate test card works.
+14. Bottom navigation works.
+15. Telegram Back button works.
+16. No horizontal overflow on mobile.
+17. Existing features are not broken.
+18. The interface works on smaller Android devices.
+
+Finally:
+- Run the application.
+- Test all navigation.
+- Fix visual and functional bugs.
+- Update DEVELOPMENT_STATUS.md.
+- Report which files were changed and what was implemented.
+
+MOST IMPORTANT:
+The final interface should look like a premium modern EdTech startup product.
+
+Use the reference screenshot for layout inspiration, but elevate its visual quality significantly.
+
+Do not make it childish.
+Do not create a generic template.
+Make ZEROLAX look like a real, professionally designed educational technology platform.

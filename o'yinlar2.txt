@@ -1,0 +1,338 @@
+# ZEROLAX — COMPLETE REPLACEMENT OF OLD MINI-GAMES WITH SIMPLE CHILD-FRIENDLY GAMES
+
+Act as a senior educational game designer, UX specialist, and full-stack developer.
+
+We have tested the previous four mathematics mini-games with children in grades 1–5. Children struggled to understand how the games worked.
+
+The existing games are too complicated.
+
+Your task is to REMOVE THE OLD GAME EXPERIENCE and replace it with FOUR NEW, EXTREMELY SIMPLE, EASY-TO-UNDERSTAND MATHEMATICS GAMES.
+
+IMPORTANT:
+Do not simply change the names or colors of the old games. Redesign their gameplay, instructions, interactions, and user experience from scratch.
+
+First inspect the existing project and identify all old mini-game components, routes, game logic, and database relationships.
+
+Preserve the rest of ZEROLAX.
+
+Do not delete historical user scores, completed sessions, or coin transaction records. Archive or deactivate old game definitions and remove their old interfaces from the active Mini-Games section. Keep historical records accessible to authorized admins.
+
+# 1. MAIN DESIGN PRINCIPLE
+
+TARGET AUDIENCE: Grades 1–5.
+
+A child must understand what to do within 3–5 seconds.
+
+Every game must:
+- Have one clear objective.
+- Show a visual example.
+- Use very large buttons.
+- Use simple Uzbek instructions.
+- Have no complicated controls.
+- Avoid unnecessary menus.
+- Avoid confusing animations.
+- Give immediate feedback.
+
+Use the same basic interaction pattern across all four games.
+
+The child sees a question, understands the task, and chooses the correct answer.
+
+# 2. NEW GAME ONE — JAVOBNI TOP
+
+Mathematical operation: ADDITION.
+
+Example:
+
+Show:
+3 red apples + 2 green apples.
+
+Ask:
+"Jami nechta olma?"
+
+Show three large answer buttons:
+4 | 5 | 6
+
+The child taps 5.
+
+If correct:
+- Show a positive animation.
+- Display "Barakalla! To‘g‘ri javob!"
+- Continue to the next question.
+
+If incorrect:
+- Display "Yana bir bor urinib ko‘r!"
+- Visually count the apples.
+- Show the correct calculation in a simple way.
+
+Gameplay must be extremely straightforward.
+
+# 3. NEW GAME TWO — NECHTA QOLDI?
+
+Mathematical operation: SUBTRACTION.
+
+Example:
+
+Show 5 balloons.
+
+Animate 2 balloons disappearing.
+
+Ask:
+"Nechta shar qoldi?"
+
+Show answer buttons:
+2 | 3 | 4
+
+The child selects the answer.
+
+Use simple objects:
+- Apples.
+- Balloons.
+- Stars.
+- Flowers.
+- Toys.
+
+Never require complicated drag-and-drop controls.
+
+# 4. NEW GAME THREE — NECHTA BO‘LDI?
+
+Mathematical operation: MULTIPLICATION.
+
+Example:
+
+Show 2 baskets.
+
+Each basket contains 3 apples.
+
+Ask:
+"Jami nechta olma?"
+
+Show:
+3 + 3 = ?
+
+Then provide three answer buttons.
+
+After answering, explain:
+"2 ta guruh, har birida 3 tadan. Jami 6 ta."
+
+Use visual grouping to explain multiplication.
+
+Introduce multiplication tables gradually according to grade level.
+
+# 5. NEW GAME FOUR — TENGLIK TAQSIMLA
+
+Mathematical operation: DIVISION.
+
+Example:
+
+Show:
+6 candies and 2 baskets.
+
+Ask:
+"6 ta konfetni 2 ta savatga teng taqsimlasak, har biriga nechtadan tushadi?"
+
+Visually demonstrate equal distribution.
+
+Show three answer buttons:
+2 | 3 | 4
+
+After answering, explain:
+"Har bir savatda 3 tadan konfet bor."
+
+Do not require dragging objects. Use automatic visual distribution and simple answer selection.
+
+Introduce division only at an appropriate grade level.
+
+# 6. FIRST-TIME GAME EXPLANATION
+
+Every game must have a very short introduction.
+
+Before the first actual round, show one example question with a clear demonstration.
+
+Example:
+
+"Rasmdagi olmalarni sanang va to‘g‘ri javobni bosing."
+
+Highlight the answer buttons.
+
+Include a large button:
+"Tushundim, boshlash!"
+
+After the first successful practice question, start the real game.
+
+Do not show long text instructions.
+
+# 7. GRADE-BASED DIFFICULTY
+
+Support grades 1, 2, 3, 4, and 5.
+
+Grade 1:
+- Addition and subtraction within 20.
+- Visual counting.
+- Very simple questions.
+- Do not introduce formal multiplication or division.
+
+Grade 2:
+- Addition and subtraction within 100.
+- Simple multiplication introduction.
+- Equal-group visual exercises.
+
+Grade 3:
+- Multiplication tables.
+- Exact division.
+- Larger addition and subtraction.
+
+Grade 4:
+- Larger numbers.
+- All four operations according to curriculum level.
+- Simple two-step problems.
+
+Grade 5:
+- All four operations.
+- Larger numbers.
+- Mixed arithmetic.
+- Suitable introductory advanced problems.
+
+Do not show multiplication or division games as active learning challenges to younger grades before the relevant concept has been introduced.
+
+Allow the admin to configure which games are available for each grade.
+
+# 8. GAME ROUND STRUCTURE
+
+Each round should contain 10 questions by default.
+
+Every game screen must show only:
+
+- Game name.
+- Current question.
+- Visual objects.
+- Three or four large answer buttons.
+- Progress indicator.
+- Current score.
+
+Do not show unnecessary controls.
+
+After the tenth question, show a simple results screen:
+
+- Correct answers.
+- Total questions.
+- Score.
+- Encouraging message.
+- "Yana o‘ynash" button.
+- "Bosh sahifaga qaytish" button.
+
+# 9. VISUAL DESIGN
+
+Use the existing ZEROLAX Autumn seasonal design system.
+
+Maintain:
+- Warm cream backgrounds.
+- Forest green.
+- Autumn copper.
+- Warm gold.
+- Professional typography.
+- Consistent card design.
+
+For children's gameplay, make important objects colorful and easy to distinguish, without turning the whole application into a childish cartoon design.
+
+Use simple, recognizable illustrations.
+
+Ensure answer buttons are large enough for small fingers.
+
+Use clear contrast and readable text.
+
+# 10. SOUND AND ANIMATIONS
+
+Add optional:
+- Soft correct-answer sound.
+- Gentle incorrect-answer sound.
+- Small success animation.
+- Object counting animation.
+
+Include a sound on/off setting.
+
+Animations must be short, lightweight, and non-distracting.
+
+Respect reduced-motion settings.
+
+# 11. REWARD SYSTEM
+
+Integrate the existing ZEROLAX coin system.
+
+Use the existing backend reward mechanism.
+
+Coins must only be awarded after a valid completed round.
+
+Prevent duplicate rewards for the same session.
+
+Do not allow frontend score manipulation.
+
+Keep reward amounts configurable by the admin.
+
+# 12. ADMIN PANEL
+
+Add management for the new games:
+
+- Enable/disable games.
+- Configure grade availability.
+- Configure number ranges.
+- Configure question difficulty.
+- Configure number of questions per round.
+- Configure reward amounts.
+- View participation statistics.
+- View average scores.
+- View completion rates.
+
+# 13. OLD GAME REMOVAL
+
+This requirement is critical.
+
+- Remove old mini-game cards from the active user interface.
+- Remove old gameplay routes from active navigation.
+- Replace old gameplay components with the new simple game experience.
+- Remove obsolete game interactions that are no longer needed.
+- Preserve historical game sessions and reward transactions.
+- Archive old game definitions instead of deleting historical records.
+- Ensure there are no broken links to old games.
+
+# 14. TESTING WITH CHILD-FRIENDLY USABILITY
+
+Test every game with sample users representing grades 1–5.
+
+Check:
+1. The child can understand the instruction.
+2. The child can identify what the question asks.
+3. The child can tap an answer easily.
+4. Correct answers show understandable feedback.
+5. Incorrect answers provide a visual explanation.
+6. The next question opens correctly.
+7. The game finishes after 10 questions.
+8. Results are saved.
+9. Rewards are credited only once.
+10. The game works on small Android screens inside Telegram.
+
+The game must be understandable without an adult explaining every step.
+
+# 15. FINAL IMPLEMENTATION
+
+Inspect the existing codebase first.
+
+Implement all four new games, not just mockups.
+
+Preserve all unrelated ZEROLAX modules.
+
+Test the complete gameplay flow.
+
+Update DEVELOPMENT_STATUS.md.
+
+Report:
+- Which old components were archived or removed.
+- Which new game components were created.
+- Which routes were changed.
+- Which tests passed.
+- Any remaining issues.
+
+FINAL GOAL:
+
+Create four extremely simple mathematics mini-games that children in grades 1–5 can understand immediately and play independently.
+
+Simplicity and clarity are more important than complicated game mechanics.

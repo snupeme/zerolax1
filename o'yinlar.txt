@@ -1,0 +1,402 @@
+# ZEROLAX — 4 TA PROFESSIONAL MATEMATIK MINI-O‘YIN YARATISH
+
+You are a senior full-stack developer, educational game designer, and UI/UX specialist.
+
+Your task is to implement FOUR fully functional, interactive, colorful, and educational mathematics mini-games inside the existing ZEROLAX Telegram Mini App.
+
+TARGET AUDIENCE:
+Children in grades 1, 2, 3, 4, and 5.
+
+LANGUAGE:
+Uzbek by default, with support for Russian and English using the existing multilingual system.
+
+IMPORTANT:
+These must be real playable games, not static screens, mockups, or ordinary multiple-choice tests.
+
+Before coding:
+1. Inspect the existing project.
+2. Inspect its frontend, backend, database, navigation, coin system, authentication, and design system.
+3. Reuse existing components and functionality.
+4. Do not break existing Algebra, Geometry, IQ, Abituriyent, Premium, or profile modules.
+5. Implement the games inside the existing Telegram Mini App.
+
+# 1. MINI-GAMES HOME PAGE
+
+Create a new section called:
+
+"MATEMATIK MINI-O‘YINLAR"
+
+Subtitle:
+"O‘yna, fikrla va matematikani o‘rgan!"
+
+Display four attractive game cards:
+
+1. YULDUZLARNI YIG‘ — Qo‘shish
+2. YO‘QOLGANLARNI TOP — Ayirish
+3. GURUHLARNI TO‘LDIR — Ko‘paytirish
+4. ADOLATLI TAQSIMLA — Bo‘lish
+
+Each card must contain:
+- Unique colorful illustration.
+- Game title.
+- Short description.
+- Mathematics operation.
+- Difficulty indicator.
+- Best score.
+- Play button.
+
+Use a friendly, playful, child-oriented design.
+
+The interface should feel like a real educational mobile game, not an administrative dashboard.
+
+# 2. GRADE SELECTION AND DIFFICULTY
+
+Before starting a game, allow the child to select their grade:
+
+1-sinf
+2-sinf
+3-sinf
+4-sinf
+5-sinf
+
+The difficulty must adapt automatically to the selected grade.
+
+Suggested difficulty:
+
+1-SINF:
+- Addition and subtraction within 20.
+- Visual counting.
+- Simple objects and pictures.
+- No difficult multiplication or division.
+
+2-SINF:
+- Addition and subtraction within 100.
+- Introduction to simple multiplication.
+- Simple equal-group division.
+
+3-SINF:
+- Addition and subtraction with larger numbers.
+- Multiplication tables.
+- Exact division without remainders.
+
+4-SINF:
+- Larger numbers.
+- Multiplication and division.
+- Multi-step arithmetic.
+- Introduction to simple word problems.
+
+5-SINF:
+- Larger numbers.
+- All four arithmetic operations.
+- Mixed arithmetic.
+- Multi-step problems.
+- Division with remainders when appropriate.
+
+These are default learning levels. Allow administrators to customize difficulty and number ranges.
+
+Do not show a child questions that are significantly above their selected grade level.
+
+# 3. GAME ONE — YULDUZLARNI YIG‘ (ADDITION)
+
+Create a fully interactive addition game.
+
+Game concept:
+The screen displays two groups of colorful stars, apples, balloons, or other child-friendly objects.
+
+Example:
+3 stars + 4 stars = ?
+
+The child counts the objects and selects or enters the answer.
+
+Gameplay:
+1. Show an attractive animated scene.
+2. Display two groups of objects.
+3. Show the addition expression.
+4. Provide answer choices or a number input.
+5. The child selects an answer.
+6. Immediately show whether the answer is correct.
+7. Play a positive animation for a correct answer.
+8. Explain the correct calculation after a wrong answer.
+9. Continue to the next question.
+
+Add:
+- Counting animation.
+- Objects moving together.
+- Number animations.
+- Positive sound effects with a mute option.
+- Progress indicator.
+- Score display.
+
+# 4. GAME TWO — YO‘QOLGANLARNI TOP (SUBTRACTION)
+
+Create an interactive subtraction game.
+
+Game concept:
+Display a group of objects.
+
+Example:
+There are 10 balloons.
+4 balloons fly away.
+How many balloons remain?
+
+Gameplay:
+1. Display the original objects.
+2. Animate the objects being removed.
+3. Show the subtraction expression.
+4. Ask the child to find the remaining quantity.
+5. Allow answer selection or number input.
+6. Display immediate feedback.
+7. Explain the answer visually.
+
+Use different objects:
+- Balloons.
+- Apples.
+- Stars.
+- Toys.
+- Flowers.
+
+Difficulty must adapt to the selected grade.
+
+# 5. GAME THREE — GURUHLARNI TO‘LDIR (MULTIPLICATION)
+
+Create an interactive multiplication game.
+
+Game concept:
+Show several groups containing equal numbers of objects.
+
+Example:
+3 groups.
+4 apples in each group.
+
+Ask:
+3 × 4 = ?
+
+Gameplay:
+1. Display equal groups visually.
+2. Highlight each group.
+3. Allow the child to count objects.
+4. Show the multiplication expression.
+5. Provide answer choices or number input.
+6. Animate the groups when the answer is correct.
+7. Explain multiplication as repeated addition.
+
+Example explanation:
+4 + 4 + 4 = 12
+3 × 4 = 12
+
+Include multiplication-table challenges suitable for the selected grade.
+
+# 6. GAME FOUR — ADOLATLI TAQSIMLA (DIVISION)
+
+Create an interactive division game.
+
+Game concept:
+A child needs to distribute objects equally between characters, boxes, or groups.
+
+Example:
+12 candies.
+3 children.
+
+Ask:
+How many candies does each child receive?
+
+Gameplay:
+1. Display the objects.
+2. Display the receiving characters or groups.
+3. Allow the child to distribute objects using drag-and-drop when supported.
+4. Alternatively, provide a simple tap-to-distribute interaction.
+5. Show the final division expression.
+6. Check whether distribution is equal.
+7. Display a positive animation and explanation.
+
+Important:
+- For grades 1–2, use simple visual grouping only when suitable.
+- Introduce formal division according to grade level.
+- Use exact division initially.
+- Introduce remainders only in appropriate advanced levels.
+
+# 7. GAME STRUCTURE
+
+Every game must have:
+
+- Game introduction.
+- Grade selection.
+- Difficulty selection where enabled.
+- 10 questions per round by default.
+- Randomly generated or safely selected questions.
+- Progress bar.
+- Current question number.
+- Correct answer counter.
+- Score.
+- Pause and resume.
+- Restart.
+- Exit confirmation.
+- Final results screen.
+
+Question generation must:
+- Respect grade level.
+- Respect difficulty.
+- Prevent invalid mathematical expressions.
+- Ensure correct answer calculation.
+- Avoid duplicate questions in the same round where possible.
+- Use valid answer choices.
+- Avoid negative results unless the level explicitly supports them.
+
+# 8. VISUAL DESIGN
+
+Create a polished children's educational game interface.
+
+Design requirements:
+- Bright, friendly colors.
+- Rounded cards and buttons.
+- Large readable text.
+- Large touch targets.
+- Friendly illustrations.
+- Smooth animations.
+- Clear visual feedback.
+- Simple layouts without clutter.
+- Responsive mobile-first design.
+
+Use a consistent visual identity across all four games.
+
+Avoid excessive flashing, distracting animations, or harsh sounds.
+
+Include:
+- Sound on/off.
+- Reduced animation option.
+- Accessible text contrast.
+- Easy navigation for young children.
+
+# 9. REWARDS AND PROGRESS
+
+Integrate the existing ZEROLAX coin and reward system.
+
+Reward rules must be configurable by the admin.
+
+Suggested reward structure:
+- Correct answer: configurable coin reward.
+- Completing a round: configurable bonus.
+- Perfect round: configurable bonus.
+
+Important:
+- Do not award coins repeatedly for the same completed round.
+- Backend must validate completed rounds.
+- Prevent score and coin manipulation through frontend requests.
+- Store game history.
+- Store best score.
+- Store completed rounds.
+- Store accuracy percentage.
+- Store grade and difficulty.
+- Do not introduce paid gambling, random paid rewards, or loot boxes.
+
+# 10. ADMIN PANEL INTEGRATION
+
+Add a new admin section:
+
+"MINI-O‘YINLAR BOSHQARUVI"
+
+Admin can:
+- Enable or disable each game.
+- Enable or disable individual grades.
+- Configure question difficulty.
+- Configure number ranges.
+- Configure questions per round.
+- Configure coin rewards.
+- Configure completion bonuses.
+- Manage game descriptions and illustrations.
+- View participation statistics.
+- View game completion rates.
+- View average scores.
+- View popular games.
+- View grade-specific performance.
+
+All admin settings must be saved in the database.
+
+Do not hardcode settings that the admin needs to manage.
+
+# 11. DATABASE AND BACKEND
+
+Inspect the existing database before creating new tables.
+
+Implement the necessary data structure for:
+- Mini-game definitions.
+- Game settings.
+- Grade difficulty configuration.
+- Game sessions.
+- Question history.
+- User answers.
+- Scores.
+- Completed rounds.
+- Reward transactions.
+- User progress.
+
+Backend must validate:
+- User identity.
+- Selected game.
+- Selected grade.
+- Question answers.
+- Round completion.
+- Score.
+- Reward eligibility.
+
+Never trust client-submitted scores or coin amounts.
+
+Prevent duplicate session submissions and duplicate rewards.
+
+# 12. MOBILE AND TELEGRAM COMPATIBILITY
+
+The games must work inside Telegram Mini App.
+
+Requirements:
+- Optimize for mobile screens.
+- Work with touch interactions.
+- Support Telegram Back navigation.
+- Prevent accidental page reloads during gameplay.
+- Save session progress when appropriate.
+- Restore interrupted games safely.
+- Handle Telegram viewport and safe areas.
+- Avoid requiring a desktop mouse.
+- Optimize assets and animations for lower-end Android devices.
+
+# 13. TESTING
+
+Test all four games with grades 1–5.
+
+Test:
+- Correct answers.
+- Incorrect answers.
+- Question generation.
+- Difficulty progression.
+- Division edge cases.
+- Grade restrictions.
+- Game completion.
+- Pause and resume.
+- Reward calculations.
+- Duplicate reward prevention.
+- Mobile touch controls.
+- Telegram Mini App navigation.
+- Admin configuration.
+
+Run automated tests and fix all discovered errors.
+
+# 14. FINAL IMPLEMENTATION RULES
+
+Do not only create designs.
+
+Build four complete playable mini-games.
+
+Do not replace the existing ZEROLAX application.
+
+Do not break existing features.
+
+Reuse the existing authentication, database, coin system, and design components.
+
+After implementation:
+1. Run migrations if needed.
+2. Run frontend and backend tests.
+3. Test all four games.
+4. Fix errors.
+5. Update DEVELOPMENT_STATUS.md.
+6. Report completed features and remaining issues.
+
+Start by inspecting the existing codebase, then implement the games step by step.

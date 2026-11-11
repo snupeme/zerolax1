@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.data/
+.env
+.env.local
+*.log
+coverage/
+.DS_Store
+supabase/.temp/
+packages/db/src/migrations.generated.ts
+apps/web/.vite/
+.npm-cache/
+
+# Keep environment-specific credentials private.
+.env.*
+!.env.example

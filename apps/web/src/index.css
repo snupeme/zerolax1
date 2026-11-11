@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.lesson-content p { margin: .6em 0; }
+.lesson-content h2 { font-size: 1.4rem; font-weight: 700; margin: 1em 0 .4em; }
+.lesson-content h3 { font-size: 1.15rem; font-weight: 700; margin: .8em 0 .4em; }
+.lesson-content ul { list-style: disc; padding-left: 1.5em; }
+.lesson-content ol { list-style: decimal; padding-left: 1.5em; }
+.lesson-content img { max-width: 100%; height: auto; border-radius: .5rem; }
+.lesson-content a { color: hsl(var(--primary)); text-decoration: underline; }
+.lesson-content blockquote { border-left: 3px solid hsl(var(--primary)); padding-left: 1em; }
+.lesson-content .katex-display { overflow-x: auto; overflow-y: hidden; }
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    overscroll-behavior-y: none;
+  }
+
+  #root {
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    @apply bg-primary/20;
+  }
+
+  input,
+  textarea,
+  select,
+  button {
+    font: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .safe-bottom {
+    padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .safe-top {
+    padding-top: calc(0.5rem + env(safe-area-inset-top, 0px));
+  }
+
+  .home-safe-top {
+    padding-top: calc(1rem + env(safe-area-inset-top, 0px));
+  }
+
+  .brand-gradient {
+    background-image: linear-gradient(135deg, hsl(var(--forest-secondary)) 0%, hsl(var(--forest)) 48%, hsl(var(--forest-secondary)) 100%);
+  }
+
+  .brand-text-gradient {
+    background-image: linear-gradient(120deg, hsl(var(--primary)), hsl(var(--success)) 52%, hsl(var(--foreground)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .premium-surface {
+    position: relative;
+    background-color: hsl(var(--forest));
+    background-image:
+      radial-gradient(circle at 88% 12%, hsl(var(--gold) / 0.34), transparent 42%),
+      radial-gradient(circle at 6% 92%, hsl(var(--surface-ink) / 0.14), transparent 46%),
+      linear-gradient(135deg, hsl(var(--forest-secondary)) 0%, hsl(var(--forest)) 52%, hsl(var(--forest-secondary)) 100%);
+  }
+
+  .premium-pattern {
+    background-image:
+      linear-gradient(hsl(var(--surface-ink) / 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--surface-ink) / 0.05) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(circle at 78% 28%, #000 0%, transparent 68%);
+  }
+
+  .arcade-surface {
+    position: relative;
+    background-color: hsl(var(--navy));
+    background-image:
+      radial-gradient(circle at 14% 18%, hsl(var(--gold) / 0.18), transparent 34%),
+      radial-gradient(circle at 92% 86%, hsl(var(--copper) / 0.16), transparent 42%),
+      linear-gradient(135deg, hsl(var(--navy)) 0%, hsl(var(--navy)) 58%, hsl(var(--navy)) 100%);
+  }
+
+  .arcade-pattern {
+    background-image:
+      linear-gradient(hsl(var(--surface-ink) / 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--surface-ink) / 0.04) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(circle at 22% 20%, #000 0%, transparent 75%);
+  }
+
+  .pressable {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .pressable:active {
+    transform: scale(0.985);
+  }
+
+  @media (hover: hover) {
+    .pressable:hover {
+      transform: translateY(-2px);
+    }
+  }
+
+  .symbol-drift {
+    animation: symbol-drift 7s ease-in-out infinite;
+  }
+
+  .symbol-drift-slow {
+    animation: symbol-drift 11s ease-in-out infinite;
+  }
+
+  @keyframes symbol-drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    50% {
+      transform: translate3d(0, -7px, 0) rotate(5deg);
+    }
+  }
+
+  .glass {
+    background-color: hsl(var(--card) / 0.82);
+    backdrop-filter: blur(16px);
+  }
+
+  /* Warm CSS backdrop avoids downloading a large decorative photograph. */
+  .app-backdrop {
+    background-color: hsl(var(--background));
+    background-image: radial-gradient(ellipse at 90% 0%, hsl(var(--gold) / .12), transparent 55%), linear-gradient(180deg, hsl(var(--background)), hsl(var(--secondary) / .5));
+  }
+
+  .seasonal-leaves { position: absolute; inset: 0 0 0 auto; width: 24%; overflow: hidden; pointer-events: none; }
+  .seasonal-leaf { position: absolute; top: -20px; width: 13px; height: 20px; color: hsl(var(--gold)); opacity: 0; animation: autumn-fall 14s linear infinite; }
+  .seasonal-leaf:nth-child(1) { left: 12%; animation-delay: -3s; }
+  .seasonal-leaf:nth-child(2) { left: 55%; animation-delay: -9s; animation-duration: 18s; color: hsl(var(--copper)); }
+  .seasonal-leaf:nth-child(3) { left: 80%; animation-delay: -13s; animation-duration: 21s; }
+  @keyframes autumn-fall {
+    0% { transform: translate3d(0, 0, 0) rotate(-25deg); opacity: 0; }
+    15%, 75% { opacity: .3; }
+    100% { transform: translate3d(-12px, 240px, 0) rotate(110deg); opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) { .seasonal-leaves { display: none; } }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--border)) transparent;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--border));
+    border-radius: 9999px;
+  }
+
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}

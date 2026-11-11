@@ -1,0 +1,1091 @@
+# ZEROLAX — MASTER FULL-STACK DEVELOPMENT PROMPT
+## Build a Complete Telegram Educational Mini App from Scratch
+
+You are a senior full-stack software engineer, software architect, UI/UX designer, database engineer, and Telegram Bot developer.
+
+Your task is to design, develop, test, and prepare a complete production-ready educational platform called **ZEROLAX**.
+
+This is a real software development project, not a prototype, not a landing page, and not a static UI demonstration.
+
+You must implement the frontend, backend, database, Telegram bot, Telegram Mini App integration, authentication, test engines, reward system, admin dashboard, and scheduled notifications.
+
+Do not stop after generating the UI.
+
+Do not use fake functionality, mock buttons, hardcoded user profiles, or simulated database responses in the production implementation.
+
+---
+
+# PART 1 — UNDERSTAND THE PRODUCT
+
+## 1.1 Product name
+
+Official brand name: ZEROLAX
+
+Telegram bot username: @ZerolaxBot (placeholder until confirmed available through BotFather).
+
+Product type: Gamified educational platform.
+
+Primary platform: Telegram Mini App.
+
+The product must primarily operate inside Telegram's built-in webview.
+
+Users should not need to open a separate browser to use the application.
+
+The application should also be technically capable of running in a normal browser for development and administration, but the primary user experience is Telegram.
+
+## 1.2 Product purpose
+
+ZEROLAX helps students improve their mathematical knowledge, logical reasoning, and university entrance examination preparation.
+
+The platform uses:
+- Daily IQ challenges.
+- University entrance examination tests.
+- Coins and rewards.
+- User profiles.
+- Educational statistics.
+- Multilingual support.
+
+The platform will expand later with Algebra and Geometry educational modules.
+
+## 1.3 Supported languages
+
+Implement a complete internationalization system.
+
+Languages:
+1. Uzbek — default.
+2. Russian.
+3. English.
+
+Requirements:
+- Every button and interface element must be translated.
+- Every notification must support all three languages.
+- Every validation message must support all three languages.
+- Remember the user's selected language.
+- Allow language changes in settings.
+- Do not mix languages in the same interface.
+
+Use structured translation files rather than hardcoding translations in components.
+
+---
+
+# PART 2 — REQUIRED TECHNOLOGY STACK
+
+Use a clean, maintainable TypeScript-based architecture.
+
+Recommended stack:
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Lucide icons
+- React Router
+- TanStack Query
+- Zod for validation
+
+### Backend
+- Node.js
+- TypeScript
+- Fastify or Express
+- Telegram Bot API using Telegraf
+- Secure REST API
+- Background worker for scheduled jobs
+
+### Database
+- Supabase PostgreSQL
+- SQL migrations
+- Proper indexes and foreign keys
+- Row Level Security where applicable
+
+### Infrastructure
+- Supabase Storage
+- Environment variables
+- Telegram Web Apps SDK
+- Scheduled jobs / cron
+- Logging and error monitoring
+
+Before selecting or installing libraries, inspect the existing project and use compatible stable versions.
+
+Do not unnecessarily introduce multiple frameworks that perform the same job.
+
+---
+
+# PART 3 — PROJECT ARCHITECTURE
+
+Organize the project as a maintainable monorepo.
+
+Suggested structure:
+
+zerolax/
+│
+├── apps/
+│   ├── web/
+│   │   ├── src/
+│   │   │   ├── components/
+│   │   │   ├── pages/
+│   │   │   ├── layouts/
+│   │   │   ├── hooks/
+│   │   │   ├── services/
+│   │   │   ├── i18n/
+│   │   │   ├── types/
+│   │   │   └── styles/
+│   │   └── package.json
+│   │
+│   ├── bot/
+│   │   └── src/
+│   │       ├── commands/
+│   │       ├── handlers/
+│   │       ├── keyboards/
+│   │       ├── services/
+│   │       └── index.ts
+│   │
+│   └── api/
+│       └── src/
+│           ├── routes/
+│           ├── middleware/
+│           ├── services/
+│           ├── workers/
+│           ├── database/
+│           └── index.ts
+│
+├── packages/
+│   └── shared/
+│       ├── types/
+│       ├── constants/
+│       └── validation/
+│
+├── supabase/
+│   ├── migrations/
+│   └── seed/
+│
+├── docs/
+├── .env.example
+├── README.md
+└── package.json
+
+You may improve this architecture when technically justified.
+
+Keep frontend, bot and backend responsibilities separated.
+
+---
+
+# PART 4 — BRANDING AND USER INTERFACE
+
+Create a premium international EdTech interface.
+
+Brand: ZEROLAX.
+
+Visual identity:
+- Modern.
+- Minimalist.
+- Professional.
+- Technology-oriented.
+- Premium startup aesthetic.
+
+Suggested colors:
+
+Primary background: #F7F8FC
+
+Dark navy: #101828
+
+Electric blue: #3867FF
+
+Purple accent: #805AD5
+
+White cards: #FFFFFF
+
+Primary text: #182230
+
+Use:
+- Modern typography.
+- Smooth transitions.
+- Subtle shadows.
+- Consistent spacing.
+- Rounded cards.
+- Clear visual hierarchy.
+- Beautiful loading skeletons.
+- Empty states.
+- Error states.
+- Success animations.
+
+Create an original ZEROLAX logo.
+
+The logo should combine concepts of intelligence, mathematics, logical thinking, and technology.
+
+Do not use a generic educational template.
+
+### Responsive requirements
+
+The main design priority is mobile.
+
+Test on:
+- Small Android screens.
+- Modern Android screens.
+- iPhone screens.
+- Desktop browsers.
+
+The layout must work properly inside Telegram's webview.
+
+Avoid horizontal scrolling and broken layouts.
+
+---
+
+# PART 5 — TELEGRAM BOT
+
+Build the actual Telegram bot using Telegraf.
+
+Bot username: @ZerolaxBot (configurable).
+
+The bot must handle registration and notifications.
+
+## 5.1 /start registration flow
+
+When a user presses /start:
+
+STEP 1 — LANGUAGE
+
+Ask the user to select:
+- 🇺🇿 O'zbekcha
+- 🇷🇺 Русский
+- 🇬🇧 English
+
+Save their choice.
+
+STEP 2 — NICKNAME
+
+Ask:
+
+"O'zingiz uchun nickname yarating."
+
+Validate:
+- Nickname must not be empty.
+- Apply reasonable length restrictions.
+- Reject inappropriate or invalid input.
+- Handle duplicate nicknames according to a clear uniqueness policy.
+
+STEP 3 — PHONE NUMBER
+
+Use Telegram's native request_contact keyboard button.
+
+Ask the user to share their Telegram phone number.
+
+Security requirements:
+- Accept contact only if contact.user_id matches the sender's Telegram user ID.
+- Do not accept another person's contact as account verification.
+- Normalize phone numbers.
+- Store personal data securely.
+- Do not expose phone numbers publicly.
+
+STEP 4 — REGISTRATION COMPLETE
+
+Create the user record.
+
+Send a welcome message in the selected language.
+
+Display an "Open ZEROLAX" button.
+
+The button must open the Telegram Mini App.
+
+## 5.2 Bot functionality
+
+Implement:
+- /start
+- /help
+- /profile
+- /language
+- /support
+
+Provide clear messages for:
+- Existing users.
+- New users.
+- Incomplete registrations.
+- Invalid phone sharing.
+- Temporary service failures.
+
+## 5.3 Telegram menu button
+
+Configure the Telegram bot menu button to open the Mini App.
+
+Use a configurable HTTPS URL from the environment.
+
+Do not hardcode production URLs.
+
+---
+
+# PART 6 — TELEGRAM MINI APP AUTHENTICATION
+
+This is a critical security requirement.
+
+Use the official Telegram Web Apps SDK.
+
+Implement:
+- Telegram WebApp.ready()
+- Telegram WebApp.expand()
+- Telegram theme parameters.
+- Telegram BackButton.
+- Telegram MainButton where appropriate.
+
+Authentication:
+
+1. Receive Telegram initData from the Mini App.
+2. Send initData to the backend.
+3. Validate the Telegram signature using the bot token on the backend.
+4. Validate auth_date and reject expired authentication data.
+5. Extract the authenticated Telegram user.
+6. Match the Telegram ID with the registered profile.
+7. Create a secure application session.
+8. Return a short-lived access token and appropriate refresh/session mechanism.
+
+Never trust:
+- Frontend Telegram user IDs.
+- Unsigned user information.
+- User-supplied coin balances.
+- User-supplied scores.
+
+Never expose the Telegram bot token in frontend code.
+
+Never expose the Supabase service-role key in frontend code.
+
+Users who have not completed registration must be redirected to the appropriate registration flow.
+
+Provide a development-only authentication mode for local testing. It must be disabled in production.
+
+---
+
+# PART 7 — HOME PAGE
+
+Create the main dashboard.
+
+Top area:
+- ZEROLAX logo.
+- Greeting using nickname.
+- Coin balance.
+- User avatar.
+- Notification indicator.
+- Language selector.
+
+Display the coin balance prominently in the upper-left area.
+
+Main navigation:
+- Home.
+- Profile.
+
+On mobile use a fixed bottom navigation bar.
+
+On desktop use a clean sidebar or suitable top navigation.
+
+## Four educational modules
+
+### 1. ALGEBRA
+
+Icon: Calculator.
+
+Description:
+"Learn algebra step by step."
+
+Status: Coming Soon.
+
+### 2. GEOMETRY
+
+Icon: Shapes.
+
+Description:
+"Explore geometry and mathematical thinking."
+
+Status: Coming Soon.
+
+### 3. UNIVERSITY ENTRANCE TESTS
+
+Icon: Graduation cap.
+
+Status: ACTIVE.
+
+This module must be fully functional.
+
+### 4. DAILY IQ TESTS
+
+Icon: Brain.
+
+Status: ACTIVE.
+
+This module must be fully functional.
+
+The future Algebra and Geometry modules must have a scalable architecture.
+
+We plan to upload our own educational textbooks for grades 5–9 in approximately 1–2 weeks.
+
+Do not build fake lessons for these modules.
+
+Display a professional Coming Soon state.
+
+---
+
+# PART 8 — DAILY IQ TEST ENGINE
+
+This is one of the most important features.
+
+## 8.1 Daily schedule
+
+Every day at exactly:
+
+09:00 AM — Asia/Tashkent timezone.
+
+A new IQ test must become available.
+
+A background scheduler must:
+1. Find or create the daily IQ test.
+2. Publish it.
+3. Send Telegram notifications to registered users.
+4. Record notification delivery attempts.
+5. Prevent duplicate publication and notifications.
+
+Users must receive a Telegram message in their selected language.
+
+Uzbek:
+"🧠 Yangi kunlik IQ testingiz tayyor! Bugungi 10 ta savolga javob bering va coinlar to'plang."
+
+Russian:
+"🧠 Ваш новый ежедневный IQ-тест готов!"
+
+English:
+"🧠 Your new Daily IQ Test is ready!"
+
+Include a button:
+"Start IQ Test"
+
+Use Telegram's bot messaging system.
+
+## 8.2 Test structure
+
+Exactly 10 questions per daily test.
+
+Question categories:
+- Logical reasoning.
+- Mathematical reasoning.
+- Number sequences.
+- Pattern recognition.
+- Problem solving.
+- Analytical thinking.
+
+Each question has:
+- Question text.
+- Four answer options.
+- One correct answer.
+- Difficulty.
+- Coin reward.
+- Optional explanation.
+- Optional image.
+
+Difficulty and rewards:
+
+| Difficulty | Coins |
+|---|---:|
+| Easy | 1 |
+| Medium | 2 |
+| Hard | 3 |
+
+The administrator controls question difficulty and rewards.
+
+## 8.3 User test experience
+
+Create a premium testing interface.
+
+Display:
+- Test title.
+- Date.
+- Question progress.
+- Current question.
+- Four answer options.
+- Navigation controls.
+- Submission confirmation.
+
+Display one question at a time.
+
+Save answers automatically on the backend.
+
+Allow users to return to previous questions before submission.
+
+Prevent duplicate submissions.
+
+Persist progress if the user closes and reopens Telegram.
+
+## 8.4 IQ result release — IMPORTANT
+
+Do not display correct answers or final scores immediately.
+
+The result becomes available exactly 24 hours after the daily test publication time.
+
+Example:
+
+Monday 09:00 — Test published.
+
+Monday 10:00 — User completes test.
+
+Tuesday 09:00 — Result released.
+
+The release time is based on the daily test publication timestamp, not the user's completion time.
+
+Before release, show:
+
+"Your result will be available tomorrow at 09:00."
+
+After release, display:
+- Total correct answers.
+- Total incorrect answers.
+- Score.
+- Percentage.
+- Coins earned.
+- Correct answers.
+- Explanations.
+- Individual question results.
+
+Award coins only once, when the result is released.
+
+Use backend transactions to prevent duplicate rewards.
+
+Users who do not complete the test must not receive rewards.
+
+Create historical test records in the profile.
+
+---
+
+# PART 9 — UNIVERSITY ENTRANCE TEST ENGINE
+
+Create a fully functional examination preparation module.
+
+## 9.1 Question sources
+
+Support question banks for:
+- IDC educational preparation materials.
+- National Certificate preparation materials.
+- DTM-style entrance examination tests.
+- Other administrator-approved educational content.
+
+Use original or properly licensed questions.
+
+The admin must be able to upload and manage question content.
+
+Do not scrape or reproduce copyrighted books without permission.
+
+## 9.2 Test format
+
+Exactly 20 questions per test.
+
+Each question supports:
+- Question text.
+- Multiple-choice answers.
+- One correct answer.
+- Optional image.
+- Optional mathematical expression.
+- Subject.
+- Difficulty.
+- Coin reward.
+- Explanation.
+
+## 9.3 Timer
+
+Each test must have a countdown timer.
+
+The administrator configures the duration.
+
+The timer must be enforced by the backend.
+
+Do not trust the frontend clock.
+
+When the timer expires:
+- Automatically finalize the attempt.
+- Calculate the score on the backend.
+- Record the submission time.
+- Release the result immediately.
+
+If a user refreshes or closes Telegram, restore the active attempt and remaining server-calculated time.
+
+## 9.4 Results
+
+Immediately after completing the test, show:
+- Correct answers.
+- Incorrect answers.
+- Percentage score.
+- Total score.
+- Time spent.
+- Earned coins.
+- Correct answer for every question.
+- Explanations.
+
+## 9.5 Daily attempt restriction
+
+A user can complete only ONE university entrance test per calendar day.
+
+Official timezone: Asia/Tashkent.
+
+Implement this restriction on the backend and database.
+
+Important:
+- One attempt per user per Tashkent calendar day.
+- Refreshing must not create another attempt.
+- Direct API requests must not bypass the restriction.
+- Concurrent requests must not create duplicate attempts.
+- Store the daily attempt date.
+- Reset eligibility automatically on the next Tashkent calendar day.
+
+## 9.6 Rewards
+
+Coins depend on:
+- Correct answers.
+- Question difficulty.
+- Admin-configured reward values.
+
+Incorrect answers earn zero coins.
+
+Record every reward in coin_transactions.
+
+---
+
+# PART 10 — COIN ECONOMY
+
+Implement a secure internal coin system.
+
+Display the balance in:
+- Home page.
+- Profile.
+- Test results.
+- Coin transaction history.
+
+Coin earning sources:
+- Daily IQ.
+- University entrance tests.
+- Future achievements.
+
+Requirements:
+- Server-side reward calculations.
+- Atomic database transactions.
+- No duplicate coin rewards.
+- No negative balance unless explicitly authorized.
+- Complete transaction history.
+- Transaction source and timestamp.
+- Admin audit trail for manual adjustments.
+
+The user must never be able to update their own coin balance directly.
+
+Use a reliable transaction ledger.
+
+---
+
+# PART 11 — PROFILE
+
+Create a dedicated profile page.
+
+Display:
+- Avatar.
+- Nickname.
+- Telegram account information.
+- Registration date.
+- Coin balance.
+- Total completed tests.
+- IQ statistics.
+- University test statistics.
+- Achievement badges.
+
+Profile menu:
+
+### Gifts
+- Available gifts.
+- Coin prices.
+- Gift details.
+- Future redemption functionality.
+
+### Settings
+- Change language.
+- Edit nickname.
+- Notification preferences.
+- Account settings.
+
+### Public Offer
+- Terms of Service.
+- Privacy Policy.
+- User Agreement.
+
+### Customer Support
+- Support contact.
+- Support request form.
+- Request status.
+
+### Log Out
+- Safely terminate the application session.
+- Do not delete the Telegram account.
+
+Phone numbers must remain private.
+
+---
+
+# PART 12 — ADMIN DASHBOARD
+
+Build a separate professional admin dashboard.
+
+Admin access must be protected by backend authorization.
+
+Never rely on hiding admin buttons in the frontend.
+
+## 12.1 Admin overview
+
+Display:
+- Total users.
+- New registrations.
+- Daily active users.
+- IQ test participation.
+- University test participation.
+- Total coins distributed.
+- Notification statistics.
+
+Use useful charts and tables.
+
+## 12.2 User management
+
+Administrators can:
+- View all users.
+- Search by nickname.
+- Search by Telegram ID.
+- View registration dates.
+- View test history.
+- View coin history.
+- Manage account status.
+- Perform authorized coin adjustments with an audit log.
+
+## 12.3 IQ test management
+
+Administrators can:
+- Create daily tests.
+- Add exactly 10 questions.
+- Edit questions.
+- Add four options.
+- Set correct answers.
+- Assign difficulty.
+- Assign rewards.
+- Add explanations.
+- Upload images.
+- Schedule publication.
+
+## 12.4 University test management
+
+Administrators can:
+- Create test collections.
+- Add exactly 20 questions per test.
+- Assign subjects.
+- Upload question images.
+- Set answer options.
+- Configure correct answers.
+- Configure timer duration.
+- Assign rewards.
+- Publish or unpublish tests.
+
+## 12.5 Notification management
+
+Administrators can:
+- Send announcements.
+- Select target users.
+- Send in Uzbek, Russian and English.
+- Schedule messages.
+- Review delivery logs.
+
+---
+
+# PART 13 — DATABASE DESIGN
+
+Use Supabase PostgreSQL.
+
+Create actual SQL migrations.
+
+Suggested tables:
+
+1. profiles
+2. daily_iq_tests
+3. iq_questions
+4. iq_question_options
+5. iq_attempts
+6. iq_user_answers
+7. entrance_tests
+8. entrance_questions
+9. entrance_question_options
+10. entrance_attempts
+11. entrance_user_answers
+12. coin_transactions
+13. achievements
+14. gifts
+15. notifications
+16. support_requests
+17. admin_users
+18. admin_audit_logs
+19. telegram_notification_logs
+20. app_settings
+
+Define:
+- Primary keys.
+- Foreign keys.
+- Unique constraints.
+- Indexes.
+- Timestamps.
+- Status fields.
+
+Important constraints:
+
+A user must not have multiple IQ attempts for the same daily test.
+
+A user must not have multiple university test attempts per Tashkent calendar day.
+
+A reward transaction must have an idempotency key to prevent duplicate crediting.
+
+Correct answers must not be exposed through normal user-facing queries before the release time.
+
+Use RLS policies and backend authorization.
+
+Store only the information necessary for the platform.
+
+---
+
+# PART 14 — SCHEDULED AUTOMATION
+
+Implement reliable server-side scheduled jobs.
+
+All scheduling must use Asia/Tashkent.
+
+### Daily at 09:00
+
+- Publish IQ test.
+- Send notifications.
+- Record delivery status.
+- Avoid duplicate execution.
+
+### IQ result release
+
+- Release results 24 hours after the corresponding daily test publication.
+- Calculate scores.
+- Credit coins.
+- Send result notifications.
+- Record completion status.
+
+### University tests
+
+- Enforce one completed test per Tashkent calendar day.
+- Use database-level safeguards.
+- Do not rely on frontend timers or dates.
+
+Handle:
+- Telegram API failures.
+- Network interruptions.
+- Retry attempts.
+- Duplicate scheduled job execution.
+- Missing daily tests.
+- Database errors.
+
+Scheduled jobs must work even when no user has the Mini App open.
+
+---
+
+# PART 15 — SECURITY AND RELIABILITY
+
+Implement:
+
+- Telegram initData signature verification.
+- Secure session management.
+- Backend role-based authorization.
+- Input validation.
+- Rate limiting.
+- SQL injection protection.
+- XSS protection.
+- Secure HTTP configuration.
+- Environment variable management.
+- Database access controls.
+- Error logging.
+- Audit logging.
+
+Never commit:
+- Bot tokens.
+- Supabase service-role keys.
+- Database passwords.
+- Private API credentials.
+
+Create a complete .env.example file containing variable names and descriptions but no real secrets.
+
+---
+
+# PART 16 — FUTURE EXPANSION
+
+Prepare the architecture for future modules.
+
+### Algebra
+Grades 5–9.
+
+Features planned:
+- Textbook library.
+- Lessons.
+- Topics.
+- Examples.
+- Exercises.
+- Tests.
+- Learning progress.
+
+### Geometry
+
+Features planned:
+- Theoretical lessons.
+- Geometric diagrams.
+- Formulas.
+- Exercises.
+- Tests.
+
+These modules are not active in the first release.
+
+Do not create fictional educational content.
+
+Only prepare the architecture and Coming Soon UI.
+
+We will provide the textbooks and materials later.
+
+---
+
+# PART 17 — DEVELOPMENT WORKFLOW
+
+You must work as an autonomous coding agent.
+
+Do not simply explain what needs to be done.
+
+Actually inspect, create, modify, and test the project files.
+
+Follow these steps:
+
+### STEP 1 — PROJECT INSPECTION
+
+- Inspect the current working directory.
+- Inspect all existing source files.
+- Identify existing frameworks and dependencies.
+- Check whether a project already exists.
+- Preserve useful existing code.
+- Do not delete files without a clear reason.
+
+### STEP 2 — ARCHITECTURE
+
+- Establish the project structure.
+- Configure TypeScript.
+- Configure frontend and backend.
+- Configure shared types.
+- Prepare environment variables.
+- Create database migrations.
+
+### STEP 3 — FRONTEND
+
+Build all application pages and components.
+
+Make every navigation element functional.
+
+### STEP 4 — BACKEND
+
+Implement real API endpoints.
+
+Connect the database.
+
+Implement authentication and authorization.
+
+### STEP 5 — TELEGRAM BOT
+
+Build registration.
+
+Implement contact verification.
+
+Connect the bot to the Mini App.
+
+Implement commands and notifications.
+
+### STEP 6 — TEST SYSTEMS
+
+Implement both test engines.
+
+Implement timers, scoring, results and restrictions.
+
+### STEP 7 — ADMIN DASHBOARD
+
+Implement user and question management.
+
+### STEP 8 — AUTOMATION
+
+Implement scheduled notifications and IQ result release.
+
+### STEP 9 — TESTING
+
+Run:
+- TypeScript checks.
+- Linting.
+- Build.
+- Backend tests.
+- API tests.
+- Authentication tests.
+- Database constraint tests.
+- Test submission tests.
+- Reward idempotency tests.
+
+Fix all errors.
+
+Do not claim a feature works unless it has been implemented and tested.
+
+### STEP 10 — DOCUMENTATION
+
+Create:
+- README.md.
+- Installation guide.
+- Environment configuration guide.
+- Supabase setup guide.
+- Telegram BotFather setup guide.
+- Local development guide.
+- Deployment guide.
+- Admin setup guide.
+
+---
+
+# PART 18 — IMPORTANT EXECUTION RULES
+
+1. Start by inspecting the existing project.
+2. Do not ask me to manually write code that you can implement.
+3. Do not generate only a plan. Execute the implementation.
+4. Work in logical stages.
+5. After each stage, check for errors.
+6. Keep the project runnable throughout development.
+7. Never replace real backend functionality with fake data.
+8. Never expose secrets.
+9. Do not leave critical features as TODO comments.
+10. If credentials are missing, implement the integration and clearly identify what credentials I must provide.
+11. If an external service requires my authorization, stop only at that specific step and explain what I need to do.
+12. Do not silently skip difficult features.
+13. Do not claim deployment or successful integration without verification.
+14. Maintain a DEVELOPMENT_STATUS.md file showing completed, pending and blocked tasks.
+15. Make reasonable technical decisions independently when requirements are sufficiently clear.
+
+If the entire implementation cannot fit into one execution session, complete the highest-priority working stage, save all progress, update DEVELOPMENT_STATUS.md and continue from the saved state.
+
+## FINAL ACCEPTANCE CRITERIA
+
+The project is considered ready for its first production release only when:
+
+- The Telegram bot starts successfully.
+- New users can register.
+- Nickname and phone verification work.
+- Telegram Mini App opens inside Telegram.
+- Telegram authentication is validated securely.
+- Uzbek, Russian and English interfaces work.
+- Home and Profile work.
+- Coin balances are retrieved from the database.
+- Daily IQ tests contain 10 questions.
+- IQ results are hidden until the correct 24-hour release time.
+- IQ coins are credited exactly once.
+- University tests contain 20 questions.
+- University test timers work.
+- University results appear immediately after submission.
+- One university test per day is enforced.
+- Admins can manage questions and tests.
+- Scheduled Telegram notifications work.
+- The application builds successfully.
+- Security checks and core tests pass.
+
+**FINAL PRODUCT: ZEROLAX — A complete, secure, multilingual Telegram educational Mini App with a real backend, Telegram bot, daily IQ challenges, university preparation tests and a coin-based reward system.**
+
+Your priority is correctness, security, maintainability and a premium user experience.

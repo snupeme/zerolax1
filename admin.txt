@@ -1,0 +1,605 @@
+# ZEROLAX — ADVANCED ADMIN CONTROL CENTER
+## Professional Admin Dashboard — Full Implementation Prompt
+
+You are a senior full-stack engineer, UI/UX designer, and software architect.
+
+Your task is to build a powerful, modern, professional administration system for the ZEROLAX educational Telegram Mini App.
+
+This must be a real, fully functional admin platform connected to the existing ZEROLAX backend and database — NOT a static dashboard or visual prototype.
+
+The admin panel should feel like a premium SaaS management platform, with excellent usability, clear information architecture, fast navigation, advanced filtering, responsive design, and complete control over the educational platform.
+
+IMPORTANT:
+Before coding, inspect the existing project architecture, authentication, database, APIs, Telegram bot, and current admin functionality. Reuse existing systems and preserve working features. Do not create duplicate tables, APIs, or authentication systems unnecessarily.
+
+---
+
+# 1. DESIGN AND USER EXPERIENCE
+
+Create a high-quality admin interface.
+
+### Visual direction
+- Modern SaaS dashboard.
+- Professional and minimal design.
+- Premium visual quality.
+- Dark and light themes.
+- Consistent spacing and typography.
+- Smooth but subtle animations.
+- Clear visual hierarchy.
+- Beautiful charts and data visualizations.
+- Responsive layout for desktop, tablet, and mobile.
+- Uzbek, Russian, and English interface support.
+
+### Main layout
+
+Desktop:
+- Collapsible left sidebar.
+- Top navigation bar.
+- Main content area.
+- Global search.
+- Notification center.
+- Admin profile menu.
+- Breadcrumb navigation.
+
+Mobile:
+- Responsive navigation drawer.
+- Compact statistics.
+- Touch-friendly controls.
+- Tables should become mobile-friendly cards or horizontally scrollable views.
+
+### UX requirements
+- No unnecessary page reloads.
+- Loading skeletons.
+- Empty states with useful instructions.
+- Confirmation dialogs for destructive actions.
+- Toast notifications for successful and failed operations.
+- Clear form validation.
+- Search, filters, sorting, and pagination.
+- Bulk actions where appropriate.
+- Save/cancel controls for editing.
+- Unsaved changes warning.
+- Useful tooltips.
+- Keyboard-friendly navigation.
+- Consistent components across all pages.
+
+Do not overload the interface with too many cards. Prioritize the most important information.
+
+---
+
+# 2. ADMIN DASHBOARD — OVERVIEW
+
+Create a main dashboard showing real-time or recently updated platform statistics.
+
+### KPI cards
+- Total registered users.
+- Active users today.
+- New registrations today.
+- Total Premium users.
+- Active subscriptions.
+- Total exams completed.
+- Certificates issued.
+- Total coins distributed.
+- Total revenue from verified payments.
+
+### Analytics
+Create interactive charts for:
+- User registrations by day, week, month, and year.
+- Daily active users.
+- Premium subscription growth.
+- Exam completion statistics.
+- Average exam scores.
+- Revenue over time.
+- Most popular subjects.
+- Most active grades.
+- User retention.
+
+### Dashboard widgets
+- Recent registrations.
+- Recent exam submissions.
+- Recent payments.
+- Recently issued certificates.
+- Users with expired Premium.
+- System notifications.
+- Pending admin tasks.
+
+All dashboard numbers must come from the actual database. Do not use fake demo numbers in production.
+
+Add date-range filters to analytics.
+
+---
+
+# 3. ADVANCED USER MANAGEMENT
+
+Create a complete user management system.
+
+### User directory
+Display:
+- Full name.
+- Username/nickname.
+- Telegram ID.
+- Phone number (only for authorized admins).
+- Age.
+- City.
+- District.
+- Registration date.
+- Premium status.
+- Account status.
+- Total coins.
+- Learning progress.
+
+### Advanced search and filters
+Allow admins to search and filter by:
+- Name.
+- Username.
+- Telegram ID.
+- Phone number.
+- Grade.
+- City and district.
+- Premium/free status.
+- Registration date.
+- Activity status.
+- Exam performance.
+- Certificate status.
+
+### User profile detail page
+
+When an admin clicks a user, open a detailed profile page with tabs:
+
+1. Overview.
+2. Personal information.
+3. Learning progress.
+4. Algebra progress.
+5. Geometry progress.
+6. Exam history.
+7. IQ test history.
+8. Abituriyent history.
+9. Certificates.
+10. Coins and rewards.
+11. Premium subscriptions.
+12. Payment history.
+13. Admin activity and notes.
+
+Admin actions:
+- Edit permitted profile information.
+- Block/unblock account.
+- Grant/revoke Premium.
+- Extend Premium expiration.
+- Add/remove coins with a reason.
+- Grant an additional exam attempt.
+- View detailed exam answers.
+- View learning progress.
+- Add internal admin notes.
+
+Every sensitive action must be permission-controlled and recorded in the audit log.
+
+Never expose private information to unauthorized staff.
+
+---
+
+# 4. COMPLETE EDUCATIONAL CONTENT MANAGEMENT
+
+Create a powerful content management system.
+
+### Subject management
+Admins can:
+- Create subjects.
+- Rename subjects.
+- Change descriptions.
+- Upload cover images.
+- Reorder subjects.
+- Enable/disable subjects.
+- Set visibility.
+
+### Grade management
+Support grades:
+5, 6, 7, 8, 9, 10, 11.
+
+Admins can:
+- Create and edit grades.
+- Enable/disable grades.
+- Assign books to grades.
+
+### Book management
+Admins can:
+- Create books.
+- Rename books.
+- Change book descriptions.
+- Upload book covers.
+- Reorder books.
+- Assign books to grades.
+- Set book availability.
+- Set free-topic limits.
+- Configure Premium requirements.
+- Manage book completion rules.
+
+### Topic management
+Admins can:
+- Create, edit, delete, duplicate, and reorder topics.
+- Add text, images, formulas, examples, and exercises.
+- Add video or external learning resources.
+- Preview lessons before publishing.
+- Save drafts.
+- Publish or unpublish topics.
+- Assign questions to topics.
+
+Use a proper rich-text editor with mathematical formula support through KaTeX or an equivalent solution.
+
+### Bulk content management
+Where practical, support:
+- Bulk question import.
+- CSV/Excel import with validation.
+- Bulk topic ordering.
+- Bulk publishing.
+- Duplicate detection.
+- Import error reports.
+
+Never silently discard invalid imported content.
+
+---
+
+# 5. QUESTION BANK AND EXAM BUILDER
+
+Build a professional question bank.
+
+### Question management
+Each question should support:
+- Question text.
+- Images.
+- Mathematical formulas.
+- Multiple-choice answers.
+- Correct answer.
+- Explanation.
+- Difficulty level.
+- Subject.
+- Grade.
+- Book.
+- Topic.
+- Tags.
+- Publication status.
+
+### Exam builder
+
+Admins can configure:
+- Topic tests: default 10 questions.
+- Intermediate exams: 20 questions.
+- Final book exams: 20 questions.
+- Question selection rules.
+- Difficulty distribution.
+- Time limits.
+- Passing score.
+- Attempt limits.
+
+### Exam rules
+- One initial attempt plus one retake by default.
+- Maximum 2 attempts per exam.
+- Admin can grant extra attempts with a recorded reason.
+- All scoring must be calculated by the backend.
+- Selected question IDs must be saved for each attempt.
+- Prevent question duplication within one attempt.
+
+### Exam analytics
+Show:
+- Average score.
+- Pass rate.
+- Failure rate.
+- Most difficult questions.
+- Most frequently missed questions.
+- Average completion time.
+- Attempt distribution.
+
+---
+
+# 6. SCORE RULES AND BOOK UNLOCK CONTROL
+
+Create an admin settings page for educational progression.
+
+Default rules:
+
+- Below 40: repeat/relearn policy.
+- 40–49: configurable by admin.
+- 50–70: review recommended; next book locked.
+- 71–79: next book unlocked; no certificate.
+- 80–100: next book unlocked and certificate issued.
+
+Admin can configure:
+- Score thresholds.
+- Retake policy.
+- Exam question count.
+- Exam duration.
+- Book unlock rules.
+- Certificate threshold.
+
+Show a preview of how each score range affects student access before saving changes.
+
+Validate threshold consistency. Prevent overlapping or impossible ranges.
+
+---
+
+# 7. PREMIUM AND SUBSCRIPTION MANAGEMENT
+
+Build a complete Premium management module.
+
+### Premium users
+- View all Premium users.
+- Search and filter subscriptions.
+- View expiration dates.
+- View subscription source.
+- View subscription history.
+
+### Admin-granted Premium
+- Grant Premium.
+- Set start and expiration date.
+- Extend subscription.
+- Revoke subscription.
+- Add an internal reason.
+- Record responsible admin.
+
+### Paid Premium
+- View payment transactions.
+- View payment status.
+- View provider.
+- View amount and currency.
+- View transaction reference.
+- View subscription activation date.
+- View refunds and failed payments.
+
+### Subscription configuration
+Prepare:
+- Subscription plans.
+- Duration.
+- Price.
+- Currency.
+- Provider configuration.
+- Promotional discounts, if supported.
+
+Do not invent payment providers, credentials, prices, or subscription durations.
+
+Payment activation must only happen after server-side verification.
+
+---
+
+# 8. CERTIFICATE MANAGEMENT
+
+Create a dedicated certificate center.
+
+Admin can:
+- View all certificates.
+- Search by student name or certificate ID.
+- Filter by grade, book, date, and status.
+- Preview certificate PDFs.
+- Download certificates.
+- Verify certificate status.
+- Revoke certificates with a reason.
+- Review certificate history.
+
+Certificate eligibility:
+- Default threshold: 80/100.
+- One certificate per qualifying book completion.
+- Every certificate has a unique verification ID and QR code.
+
+Public verification pages must never expose private student data.
+
+---
+
+# 9. HOMEPAGE AND ADVERTISEMENT MANAGER
+
+Build a visual homepage management module.
+
+Admin can:
+- Create banners.
+- Upload images.
+- Set titles and descriptions.
+- Add destination links.
+- Set start and end dates.
+- Set priority and display order.
+- Enable or disable advertisements.
+- Preview banners before publishing.
+- Choose where banners appear.
+
+Support:
+- Homepage promotional banners.
+- Educational announcements.
+- Premium promotions.
+- Important notifications.
+
+Add scheduling so banners automatically appear and disappear according to their configured dates.
+
+Validate image size, file type, and external links.
+
+---
+
+# 10. COINS, REWARDS AND IQ MANAGEMENT
+
+Create a reward management module.
+
+Admin can:
+- View coin transactions.
+- Add or deduct coins with a reason.
+- Configure reward rules.
+- Configure difficulty-based rewards.
+- View reward history.
+- Detect suspicious or duplicate reward transactions.
+
+Daily IQ management:
+- Manage daily IQ questions.
+- Schedule publication at 09:00 Asia/Tashkent.
+- Manage question difficulty.
+- View participation.
+- View results after the 24-hour release period.
+- Inspect incorrect answers and statistics.
+
+All rewards must be credited by the backend exactly once.
+
+---
+
+# 11. ADMIN ROLES AND PERMISSIONS
+
+Build role-based access control.
+
+Suggested roles:
+
+### Super Admin
+Full access to everything.
+
+### Content Manager
+Can manage subjects, grades, books, topics, and questions.
+
+### Exam Manager
+Can manage exams, attempts, exam results, and exam settings.
+
+### Support Manager
+Can view user profiles and handle support requests, without unrestricted access to sensitive information.
+
+### Finance Manager
+Can view subscriptions, payments, and revenue.
+
+### Marketing Manager
+Can manage banners, advertisements, and announcements.
+
+### Analyst
+Read-only access to analytics and reports.
+
+Requirements:
+- Super Admin can create roles and customize permissions.
+- Apply permission checks on the backend, not just the frontend.
+- Restrict sensitive user data.
+- Record permission changes.
+- Prevent unauthorized access through direct API requests.
+
+---
+
+# 12. AUDIT LOG AND SECURITY CENTER
+
+Create an audit log showing:
+- Admin who performed the action.
+- Action type.
+- Target record.
+- Previous value where appropriate.
+- New value where appropriate.
+- Timestamp.
+- Reason.
+- Request metadata where safe and necessary.
+
+Include filters by:
+- Admin.
+- Action type.
+- Date.
+- Target user.
+- Module.
+
+Security:
+- Secure admin authentication.
+- Role-based permissions.
+- Rate limiting.
+- Server-side validation.
+- Secure file uploads.
+- Protected API endpoints.
+- No secrets in frontend code.
+- No service-role keys in the browser.
+- Telegram authentication verified on backend.
+- Sensitive actions require confirmation.
+- Prevent unauthorized privilege escalation.
+
+---
+
+# 13. REPORTS AND EXPORTS
+
+Create a reports center.
+
+Support reports for:
+- Users.
+- Registrations.
+- Learning progress.
+- Exam results.
+- Certificates.
+- Premium subscriptions.
+- Payments.
+- Coins and rewards.
+
+Allow CSV export where permissions allow it.
+
+Apply date filters and other relevant filters before exporting.
+
+Do not include sensitive personal data in exports unless the admin has the necessary permission.
+
+---
+
+# 14. SYSTEM SETTINGS
+
+Create a centralized settings module.
+
+Include:
+- Platform name and branding.
+- Logo and favicon.
+- Supported languages.
+- Timezone: Asia/Tashkent.
+- Registration settings.
+- Premium configuration.
+- Exam settings.
+- Certificate settings.
+- Coin rules.
+- Notification settings.
+- Homepage settings.
+- Maintenance mode.
+
+Use a clear settings structure with validation and change history.
+
+---
+
+# 15. TECHNICAL IMPLEMENTATION REQUIREMENTS
+
+- Use the existing project stack.
+- Keep frontend and backend responsibilities separated.
+- Build reusable UI components.
+- Use typed API responses.
+- Add pagination for large datasets.
+- Use server-side filtering and sorting.
+- Optimize database queries.
+- Add indexes for frequently searched fields.
+- Use secure file storage.
+- Add error handling and logging.
+- Use migrations for schema changes.
+- Add automated tests for permissions and critical actions.
+
+Do not fetch all users, questions, or transactions into the browser at once.
+
+All administrative data must be retrieved through authorized backend endpoints.
+
+---
+
+# 16. FINAL QUALITY ASSURANCE
+
+Before finishing, test these scenarios:
+
+1. Super Admin can access all modules.
+2. Content Manager cannot access finance settings.
+3. Finance Manager cannot edit educational questions.
+4. Unauthorized users cannot open admin APIs.
+5. User search and filtering work correctly.
+6. User profile displays accurate data.
+7. Admin can create and publish a book.
+8. Admin can create and publish a topic.
+9. Admin can create and edit questions.
+10. Exam settings affect actual exam behavior.
+11. Admin can grant and revoke Premium.
+12. Paid Premium activates only after verified payment.
+13. Certificates are generated only at 80+.
+14. Book progression follows configured thresholds.
+15. Homepage advertisements respect their schedule.
+16. Audit logs record sensitive actions.
+17. CSV exports respect permissions.
+18. Mobile admin layout works correctly.
+19. Dark and light themes work correctly.
+20. Existing student-facing features continue to work.
+
+Finally:
+
+- Implement the actual admin system.
+- Run migrations.
+- Run tests.
+- Fix errors.
+- Remove placeholder data from production views.
+- Update DEVELOPMENT_STATUS.md.
+- Provide a clear summary of implemented modules and remaining tasks.
+
+Do not stop after creating the dashboard design. Implement the complete working administration system.

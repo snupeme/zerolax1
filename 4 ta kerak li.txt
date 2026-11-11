@@ -1,0 +1,464 @@
+# ZEROLAX — ULTIMATE EDTECH PLATFORM UPGRADE
+## Professional Full-Stack Implementation Prompt
+
+Sen Senior Full-Stack Developer, Software Architect, UI/UX Designer va EdTech Product Engineer sifatida ishlaysan.
+
+Maqsading — mavjud ZEROLAX Telegram Mini App platformasini oddiy test yechish platformasidan foydalanuvchining bilimini kuzatadigan, rivojlantiradigan, xatolarini tahlil qiladigan va muntazam o‘qishga undaydigan professional EdTech ekotizimiga aylantirish.
+
+**ENG MUHIM TALAB:** Faqat dizayn, maket yoki demo yaratma. Barcha funksiyalarni real frontend, backend, database va admin panel bilan to‘liq ishlaydigan qilib amalga oshir.
+
+Mavjud loyihaning texnologiyalari va arxitekturasini saqla. Ishlayotgan modullarni buzma.
+
+---
+
+# 1. LOYIHANI TAHLIL QILISH
+
+Ishni boshlashdan oldin:
+
+- Barcha papkalar va fayllarni tekshir.
+- Frontend va backend arxitekturasini o‘rgan.
+- Database sxemasini tekshir.
+- Authentication va Telegram WebApp integratsiyasini tekshir.
+- User profile va coin tizimini o‘rgan.
+- Algebra, Geometry, DTM, SAT va IQ modullarini tekshir.
+- Admin panelni o‘rgan.
+- Mavjud dizayn tizimi va mavsumiy ranglarni aniqlash.
+
+Yangi funksiyalarni mavjud tizimga moslashtir.
+
+Keraksiz qayta yozishlardan qoch.
+
+# 2. DAILY MISSIONS — KUNLIK VAZIFALAR
+
+Foydalanuvchini har kuni platformaga qaytishga rag‘batlantiruvchi tizim yarat.
+
+### Vazifalar
+
+- 10 ta test savolini yechish.
+- Algebra fanidan mavzu tugatish.
+- Geometry fanidan mashq bajarish.
+- 10 ta Flashcard takrorlash.
+- 5 ta xatoni qayta ishlash.
+- Kunlik imtihon yoki IQ mashqini bajarish.
+
+Har bir vazifada:
+
+- Vazifa nomi.
+- Qisqa tushuntirish.
+- Progress.
+- Mukofot.
+- Bajarilish holati.
+
+Admin vazifalarni yaratishi, tahrirlashi, o‘chirishi, mukofot va muddatini belgilashi mumkin bo‘lsin.
+
+### Daily Streak
+
+- 3 kun.
+- 7 kun.
+- 14 kun.
+- 30 kun.
+- 60 kun.
+
+Streak faqat haqiqiy o‘quv faolligi bilan oshsin. Kunlik progress serverda saqlansin.
+
+# 3. LEADERBOARD — GLOBAL REYTING
+
+Reytingning quyidagi turlarini yarat:
+
+- Haftalik.
+- Oylik.
+- Umumiy.
+- Algebra.
+- Geometry.
+- DTM.
+- SAT.
+
+### Reyting elementlari
+
+- Foydalanuvchi avatar.
+- Ism yoki username.
+- Reyting o‘rni.
+- Ball.
+- Yechilgan savollar.
+- O‘sish ko‘rsatkichi.
+
+TOP 3 uchun oltin, kumush va bronza dizayni ishlat.
+
+Foydalanuvchi o‘z o‘rnini har doim ko‘ra olsin.
+
+Reyting faqat server tasdiqlagan haqiqiy o‘quv natijalari asosida hisoblansin. Coin sotib olish reytingni oshirmasin.
+
+Haftalik va oylik reytinglar tarixini saqlash imkoniyati bo‘lsin.
+
+Maxfiylik sozlamalari orqali foydalanuvchi reytingda ko‘rinishini boshqara olsin.
+
+# 4. FLASHCARDS — SMART YODLASH TIZIMI
+
+Matematik formulalar, qoidalar, ta'riflar va boshqa bilimlarni eslab qolish uchun kartochkalar tizimi yarat.
+
+### Yo‘nalishlar
+
+- Algebra.
+- Geometry.
+- DTM.
+- SAT.
+- Ingliz tili.
+
+### Kartochka
+
+- Savol yoki formula.
+- Javob.
+- Izoh.
+- Misol.
+- Qiyinlik darajasi.
+
+Kartochka bosilganda javob animatsiya bilan ochilsin.
+
+### Spaced Repetition
+
+Foydalanuvchi kartani baholaydi:
+
+- Bilmayman.
+- Qiyin.
+- Yaxshi bilaman.
+- Juda yaxshi bilaman.
+
+Javobga qarab takrorlash vaqti belgilanadi.
+
+Dastlabki tavsiya:
+
+- Bilmayman — shu sessiyada qayta ko‘rsatish.
+- Qiyin — 1 kundan keyin.
+- Yaxshi bilaman — 3 kundan keyin.
+- Juda yaxshi bilaman — 7 kundan keyin.
+
+Takrorlash oralig‘i admin tomonidan sozlanishi mumkin bo‘lsin.
+
+Sevimli kartalar, qidiruv, fan va mavzu filtrlari hamda o‘zlashtirish statistikasi bo‘lsin.
+
+# 5. XATOLAR DAFTARI — SMART ERROR NOTEBOOK
+
+Foydalanuvchi testda noto‘g‘ri javob bersa, savol avtomatik saqlansin.
+
+Saqlanadigan ma'lumotlar:
+
+- Savol.
+- Foydalanuvchining javobi.
+- To‘g‘ri javob.
+- Tushuntirish.
+- Fan.
+- Mavzu.
+- Sana.
+- Takroriy xatolar soni.
+
+Bir xil savol keraksiz dublikat bo‘lib ketmasin.
+
+### Qayta ishlash
+
+Foydalanuvchi xatolarini qayta yechishi mumkin bo‘lsin.
+
+To‘g‘ri javob bergandan keyin tushuntirish ko‘rsatilsin. Qayta xato qilsa, savol qayta mashq ro‘yxatida qolsin.
+
+### Smart Weakness Analysis
+
+Tizim quyidagilarni aniqlasin:
+
+- Qaysi fan kuchli?
+- Qaysi mavzu zaif?
+- Qaysi savollar ko‘p xato qilinmoqda?
+- Qaysi mavzularni qayta o‘rganish kerak?
+
+Misol:
+
+"Kasrlar mavzusida xatolaringiz ko‘p. Shu mavzudan 10 ta qo‘shimcha mashq bajarishni tavsiya qilamiz."
+
+Tahlil haqiqiy foydalanuvchi ma'lumotlariga asoslangan bo‘lsin.
+
+# 6. PERSONALIZED LEARNING — INDIVIDUAL TA'LIM
+
+Har bir foydalanuvchi uchun individual o‘quv yo‘nalishini yarat.
+
+Tizim foydalanuvchining:
+
+- Test natijalari.
+- Xatolari.
+- O‘rgangan mavzulari.
+- O‘qish faolligi.
+- Flashcard natijalari.
+- Imtihon natijalarini tahlil qilsin.
+
+Shu asosda foydalanuvchiga individual tavsiyalar bersin.
+
+Misol:
+
+- Tenglamalar: yaxshi.
+- Kasrlar: rivojlantirish kerak.
+- Geometriya: o‘rtacha.
+- Foizlar: qayta o‘rganish tavsiya etiladi.
+
+### Smart Recommendations
+
+Foydalanuvchiga quyidagi tavsiyalarni ber:
+
+- Keyingi o‘rganiladigan mavzu.
+- Qayta ko‘rib chiqiladigan mavzu.
+- Tavsiya etilgan test.
+- Flashcard orqali takrorlash.
+- Xatolar daftaridagi mashqlar.
+
+Tavsiyalar foydalanuvchining real natijalariga asoslangan bo‘lsin. Sun'iy yoki tasodifiy tavsiyalar bermasin.
+
+# 7. WEEKLY REPORT — HAFTALIK HISOBOT
+
+Har hafta foydalanuvchiga o‘z rivojlanishi haqida hisobot ko‘rsat.
+
+### Hisobot tarkibi
+
+- Haftada o‘qilgan kunlar.
+- Yechilgan savollar soni.
+- To‘g‘ri javoblar foizi.
+- O‘rganilgan mavzular.
+- Xatolar soni.
+- Qayta ishlangan xatolar.
+- Flashcard natijalari.
+- Reytingdagi o‘zgarish.
+- Oldingi haftaga nisbatan o‘sish.
+
+### Vizual ko‘rinish
+
+Grafiklar va progress diagrammalari ishlat.
+
+Haftalik hisobot faqat haqiqiy database ma'lumotlaridan tuzilsin.
+
+# 8. ACHIEVEMENTS — YUTUQLAR TIZIMI
+
+Foydalanuvchilar faoliyati uchun yutuqlar yarat.
+
+Misollar:
+
+- First Step — birinchi testni tugatdi.
+- 100 Questions — 100 ta savol yechdi.
+- Perfect Score — 100% natija ko‘rsatdi.
+- 7-Day Streak — 7 kun davomida faol bo‘ldi.
+- Knowledge Master — belgilangan miqdorda mavzularni tugatdi.
+- Mistake Fighter — 20 ta xatoni to‘g‘ri qayta ishladi.
+- Flashcard Master — 100 ta kartani o‘zlashtirdi.
+
+Yutuqlar:
+
+- Nomi.
+- Belgisi.
+- Tavsifi.
+- Ochilish sharti.
+- Olingan sana.
+
+Yutuqlar avtomatik ochilsin. Bir yutuq takroran mukofot bermasin.
+
+# 9. LEARNING ANALYTICS — BILIM XARITASI
+
+Foydalanuvchining bilim darajasini vizual ko‘rsatadigan Learning Map yarat.
+
+Har bir fan va mavzu alohida ko‘rsatilsin.
+
+Holatlar:
+
+- Boshlanmagan.
+- Jarayonda.
+- Yaxshi o‘zlashtirilgan.
+- Qayta o‘rganish kerak.
+
+Mavzuning holati faqat real o‘quv natijalari asosida yangilansin.
+
+Foydalanuvchi mavzuni bosganda uning testlari, natijalari va tavsiyalari ochilsin.
+
+# 10. ADMIN PANEL — TO‘LIQ BOSHQARUV
+
+Barcha yangi modullar admin panelga integratsiya qilinsin.
+
+Admin quyidagilarni boshqarsin:
+
+### Daily Missions
+- Vazifalar.
+- Mukofotlar.
+- Muddatlar.
+- Foydalanuvchilar statistikasi.
+
+### Leaderboard
+- Reytinglar.
+- Hisoblash qoidalari.
+- Shubhali faollik.
+- Reyting tarixlari.
+
+### Flashcards
+- Fanlar.
+- Mavzular.
+- Kartochkalar.
+- Savollar va javoblar.
+- Import/export.
+- Draft/published holati.
+
+### Error Notebook
+- Umumiy xatolar statistikasi.
+- Eng ko‘p xato qilinayotgan mavzular.
+- Muammoli savollar.
+- Savollarni tahrirlash.
+
+### Learning Analytics
+- Zaif mavzular.
+- Kuchli mavzular.
+- O‘quvchilar faolligi.
+- O‘zlashtirish ko‘rsatkichlari.
+
+### Achievements
+- Yangi yutuqlar yaratish.
+- Shartlarini belgilash.
+- Belgilarni boshqarish.
+
+### Weekly Reports
+- Hisobot davri.
+- Statistikalar.
+- Eksport.
+
+Admin uchun barcha o‘zgarishlar audit logda qayd etilsin.
+
+# 11. DATABASE VA API
+
+Mavjud database sxemasini tekshirib, quyidagi modullar uchun kerakli jadvallarni yarat yoki mavjudlarini kengaytir:
+
+- daily_missions
+- user_daily_missions
+- user_streaks
+- leaderboard_snapshots
+- flashcard_decks
+- flashcards
+- user_flashcard_progress
+- user_flashcard_favorites
+- user_mistakes
+- mistake_review_history
+- user_achievements
+- achievements
+- learning_analytics
+- weekly_reports
+- recommendation_history
+
+Nomlar mavjud loyihadagi standartlarga moslashtirilsin.
+
+API endpointlar, validation, pagination, filtering, sorting, error handling va database indexlar yaratilishi kerak.
+
+Barcha muhim hisob-kitoblar backendda bajarilsin.
+
+Telegram `initData` serverda tekshirilsin. Frontend yuborgan user ID, coin, score yoki Premium holatiga ishonilmasin.
+
+# 12. XAVFSIZLIK VA ADOLATLILIK
+
+- Coin mukofotlari faqat server tomonidan berilsin.
+- Takroriy mukofot olish bloklansin.
+- Leaderboard natijalari server tomonidan hisoblanadi.
+- Foydalanuvchi boshqa foydalanuvchining ma'lumotlarini o‘zgartira olmasin.
+- Admin huquqlari backendda tekshirilsin.
+- Rate limiting qo‘llanilsin.
+- Muhim o‘zgarishlar audit logga yozilsin.
+- Bot token va maxfiy kalitlar frontendga chiqmasin.
+- Database access policy va RLS mavjud bo‘lsa, to‘g‘ri sozlansin.
+
+# 13. DIZAYN VA FOYDALANUVCHI TAJRIBASI
+
+ZEROLAX dizayn tizimini saqla.
+
+Asosiy ranglar:
+
+- #075B4C
+- #064638
+- #171A35
+- #E5B94F
+- #F6F7F5
+- #FFFFFF
+- #20242B
+- #777F89
+
+Dizayn:
+
+- Premium Modern EdTech.
+- Minimalistik.
+- Zamonaviy.
+- Professional.
+- Bolalarcha bo‘lmagan.
+- Mobil qurilmalarga mos.
+- Telegram Mini App bilan to‘liq mos.
+
+Mavjud kuzgi mavsumiy dizayn bilan uyg‘un ishlasin.
+
+Barcha sahifalarda:
+
+- Loading state.
+- Empty state.
+- Error state.
+- Success state.
+- Responsive layout.
+- Qulay navigatsiya bo‘lsin.
+
+Animatsiyalar yengil bo‘lsin va past quvvatli Android telefonlarda ishlashni sekinlashtirmasin.
+
+# 14. TESTLASH
+
+Quyidagilar uchun test yoz va bajar:
+
+1. Daily Missions takroriy mukofot bermaydi.
+2. Kun almashganda vazifalar yangilanadi.
+3. Streak to‘g‘ri hisoblanadi.
+4. Leaderboard haqiqiy natijalarni ko‘rsatadi.
+5. Flashcard progress saqlanadi.
+6. Spaced Repetition ishlaydi.
+7. Noto‘g‘ri javoblar avtomatik saqlanadi.
+8. Takroriy xatolar dublikat yaratmaydi.
+9. Xatolarni qayta ishlash ishlaydi.
+10. Individual tavsiyalar real ma'lumotlarga asoslanadi.
+11. Weekly Report to‘g‘ri hisoblanadi.
+12. Achievements avtomatik ochiladi.
+13. Learning Map progressni to‘g‘ri ko‘rsatadi.
+14. Admin ruxsatlari to‘g‘ri ishlaydi.
+15. Mobil va Telegram Mini App interfeysi buzilmaydi.
+
+TypeScript, lint, build va mavjud testlarni ishga tushir. Barcha aniqlangan xatolarni tuzat.
+
+# 15. ISHNI BAJARISH TARTIBI
+
+Ishni quyidagi bosqichlarga ajrat:
+
+**1-bosqich:** Loyihani tahlil qilish va arxitekturani tushunish.
+
+**2-bosqich:** Database va backend.
+
+**3-bosqich:** Daily Missions va Leaderboard.
+
+**4-bosqich:** Flashcards va Xatolar daftari.
+
+**5-bosqich:** Personalized Learning va Learning Analytics.
+
+**6-bosqich:** Weekly Reports va Achievements.
+
+**7-bosqich:** Admin panel integratsiyasi.
+
+**8-bosqich:** UI/UX va mobil optimizatsiya.
+
+**9-bosqich:** Testlash va xatolarni tuzatish.
+
+Har bir bosqich tugagach, natijani tekshir va `DEVELOPMENT_STATUS.md` faylini yangila.
+
+Agar biror funksiya to‘liq bajarilmagan bo‘lsa, uni Completed deb belgilama.
+
+# YAKUNIY NATIJA
+
+ZEROLAX quyidagi imkoniyatlarga ega professional ta'lim platformasi bo‘lishi kerak:
+
+- Har kuni o‘qishga undaydi.
+- Foydalanuvchilar o‘rtasida sog‘lom raqobat yaratadi.
+- Formulalarni eslab qolishga yordam beradi.
+- Xatolarni aniqlaydi va qayta ishlatadi.
+- Har bir foydalanuvchiga individual o‘quv yo‘nalishini beradi.
+- Haftalik natijalarni ko‘rsatadi.
+- Yutuqlar orqali motivatsiya beradi.
+- Bilim darajasini vizual tahlil qiladi.
+- Admin tomonidan to‘liq boshqariladi.
+
+**BU ISHNI FAQAT KO‘RINISH UCHUN EMAS, REAL FOYDALANISH UCHUN ISHLAB CHIQ.**
